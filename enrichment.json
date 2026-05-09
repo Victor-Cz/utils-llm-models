@@ -1,0 +1,49 @@
+{
+    "providers": {
+        "anthropic": {
+            "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Symbol.svg?_wwcv=1778299695142",
+            "default_model_logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Claude_AI_symbol.svg?_wwcv=1778299695158"
+        },
+        "openai": {
+            "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/openai-svgrepo-com.svg?_wwcv=1778299695154",
+            "default_model_logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/openai-svgrepo-com.svg?_wwcv=1778299695154"
+        },
+        "google": {
+            "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Google_Favicon_2025.svg?_wwcv=1778299695167",
+            "default_model_logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Google_Gemini_icon_2025.svg?_wwcv=1778299695150"
+        },
+        "mistral": {
+            "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Mistral_AI_logo_(2025–).svg?_wwcv=1778299695167",
+            "default_model_logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Mistral_AI_logo_(2025–).svg?_wwcv=1778299695167"
+        }
+    },
+    "models": {},
+    "order": {
+        "providers": ["openai", "anthropic", "google", "mistral"]
+    },
+    "filters": {
+        "filter_by_doc_page": true,
+        "exclude_dated": true,
+        "exclude_patterns": [
+            "^ft:",
+            "^container$",
+            "^gpt-3\\.5-",
+            "^chatgpt-",
+            "^open-",
+            "^mistral-(tiny|small|medium)$",
+            "^codestral-mamba-",
+            "^gemini-exp-",
+            "^gemini-gemma-",
+            "^gemma-",
+            "^learnlm-",
+            "^lyria-",
+            "^gemini-robotics-",
+            "-search-",
+            "-customtools$",
+            "-chat($|-)",
+            "-latest$",
+            "-computer-use(-|$)",
+            "^deep-research-"
+        ]
+    }
+}

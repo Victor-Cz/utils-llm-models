@@ -1,0 +1,49 @@
+name: Sync LLM models
+
+on:
+    workflow_dispatch:
+    schedule:
+        # Every Monday at 06:00 UTC
+        - cron: "0 6 * * 1"
+
+permissions:
+    contents: write
+    pull-requests: write
+
+jobs:
+    sync:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: "20"
+                  cache: "npm"
+
+            - run: npm ci
+
+            - name: Run sync
+              env:
+                  ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+              run: npm run sync
+
+            - name: Open PR with changes
+              uses: peter-evans/create-pull-request@v7
+              with:
+                  commit-message: "chore: sync LLM models catalog"
+                  title: "chore: sync LLM models catalog"
+                  body: |
+                      Automated sync of `models.json` from LiteLLM + provider doc pages.
+
+                      Review the diff to spot:
+                      - 💰 Pricing changes
+                      - 🆕 New models
+                      - 🪦 Newly deprecated models
+
+                      See the workflow run summary for details.
+                  branch: chore/sync-llm-models
+                  delete-branch: true
+                  add-paths: |
+                      models.json
+                      enrichment.json
