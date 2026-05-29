@@ -1106,6 +1106,47 @@
                 "deprecation_date": null
             },
             {
+                "label": "gpt-realtime-2",
+                "name": {
+                    "en": "GPT Realtime 2",
+                    "fr": "GPT Realtime 2"
+                },
+                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/openai-svgrepo-com.svg?_wwcv=1778299695154",
+                "llm_config": "default",
+                "description": null,
+                "context_window": {
+                    "input": 32000,
+                    "output": 4096
+                },
+                "capabilities": [
+                    "function_calling",
+                    "audio_input",
+                    "audio_output"
+                ],
+                "categories": [
+                    "realtime"
+                ],
+                "input_formats": [
+                    "text",
+                    "audio"
+                ],
+                "output_formats": [
+                    "text",
+                    "audio"
+                ],
+                "pricing": {
+                    "1m_tokens": {
+                        "input": 4,
+                        "output": 16,
+                        "cache_read": 0.4
+                    },
+                    "per_image": {
+                        "input": 0.000005
+                    }
+                },
+                "deprecation_date": null
+            },
+            {
                 "label": "gpt-image-2",
                 "name": {
                     "en": "GPT Image 2",
@@ -1633,6 +1674,48 @@
         },
         "models": [
             {
+                "label": "claude-opus-4-8",
+                "name": {
+                    "en": "Claude Opus 4.8",
+                    "fr": "Claude Opus 4.8"
+                },
+                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Claude_AI_symbol.svg?_wwcv=1778299695158",
+                "llm_config": "default",
+                "description": null,
+                "context_window": {
+                    "input": 1000000,
+                    "output": 128000
+                },
+                "capabilities": [
+                    "vision",
+                    "function_calling",
+                    "pdf_input",
+                    "reasoning",
+                    "prompt_caching"
+                ],
+                "categories": [
+                    "chat",
+                    "reasoning"
+                ],
+                "input_formats": [
+                    "text",
+                    "image",
+                    "pdf"
+                ],
+                "output_formats": [
+                    "text"
+                ],
+                "pricing": {
+                    "1m_tokens": {
+                        "input": 5,
+                        "output": 25,
+                        "cache_write": 6.25,
+                        "cache_read": 0.5
+                    }
+                },
+                "deprecation_date": null
+            },
+            {
                 "label": "claude-opus-4-7",
                 "name": {
                     "en": "Claude Opus 4.7",
@@ -2030,6 +2113,49 @@
                 "deprecation_date": null
             },
             {
+                "label": "gemini-3.5-flash",
+                "name": {
+                    "en": "Gemini 3.5 Flash",
+                    "fr": "Gemini 3.5 Flash"
+                },
+                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Google_Gemini_icon_2025.svg?_wwcv=1778299695150",
+                "llm_config": "default",
+                "description": null,
+                "context_window": {
+                    "input": 1048576,
+                    "output": 65535
+                },
+                "capabilities": [
+                    "vision",
+                    "function_calling",
+                    "audio_input",
+                    "pdf_input",
+                    "reasoning",
+                    "prompt_caching"
+                ],
+                "categories": [
+                    "chat",
+                    "reasoning"
+                ],
+                "input_formats": [
+                    "text",
+                    "image",
+                    "audio",
+                    "pdf"
+                ],
+                "output_formats": [
+                    "text"
+                ],
+                "pricing": {
+                    "1m_tokens": {
+                        "input": 1.5,
+                        "output": 9,
+                        "cache_read": 0.15
+                    }
+                },
+                "deprecation_date": null
+            },
+            {
                 "label": "gemini-3.1-pro-preview",
                 "name": {
                     "en": "Gemini 3.1 Pro Preview",
@@ -2144,6 +2270,49 @@
                     },
                     "per_image": {
                         "output": 0.045
+                    }
+                },
+                "deprecation_date": null
+            },
+            {
+                "label": "gemini-3.1-flash-lite",
+                "name": {
+                    "en": "Gemini 3.1 Flash Lite",
+                    "fr": "Gemini 3.1 Flash Lite"
+                },
+                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Google_Gemini_icon_2025.svg?_wwcv=1778299695150",
+                "llm_config": "default",
+                "description": null,
+                "context_window": {
+                    "input": 1048576,
+                    "output": 65536
+                },
+                "capabilities": [
+                    "vision",
+                    "function_calling",
+                    "audio_input",
+                    "pdf_input",
+                    "reasoning",
+                    "prompt_caching"
+                ],
+                "categories": [
+                    "chat",
+                    "reasoning"
+                ],
+                "input_formats": [
+                    "text",
+                    "image",
+                    "audio",
+                    "pdf"
+                ],
+                "output_formats": [
+                    "text"
+                ],
+                "pricing": {
+                    "1m_tokens": {
+                        "input": 0.25,
+                        "output": 1.5,
+                        "cache_read": 0.025
                     }
                 },
                 "deprecation_date": null
@@ -3091,6 +3260,41 @@
                 ],
                 "categories": [
                     "image"
+                ],
+                "input_formats": [
+                    "text",
+                    "image"
+                ],
+                "output_formats": [
+                    "text"
+                ],
+                "pricing": {
+                    "1m_tokens": {
+                        "input": 0.15,
+                        "output": 0.15
+                    }
+                },
+                "deprecation_date": null
+            },
+            {
+                "label": "ministral-8b-2512",
+                "name": {
+                    "en": "Ministral 8B",
+                    "fr": "Ministral 8B"
+                },
+                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Mistral_AI_logo_(2025–).svg?_wwcv=1778299695167",
+                "llm_config": "default",
+                "description": null,
+                "context_window": {
+                    "input": 262144,
+                    "output": 262144
+                },
+                "capabilities": [
+                    "vision",
+                    "function_calling"
+                ],
+                "categories": [
+                    "chat"
                 ],
                 "input_formats": [
                     "text",
