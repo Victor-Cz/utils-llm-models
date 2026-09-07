@@ -11,6 +11,48 @@
         },
         "models": [
             {
+                "label": "gpt-6-astra",
+                "name": {
+                    "en": "GPT 6 Astra",
+                    "fr": "GPT 6 Astra"
+                },
+                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/openai-svgrepo-com.svg?_wwcv=1778299695154",
+                "llm_config": "default",
+                "description": null,
+                "context_window": {
+                    "input": 922000,
+                    "output": 128000
+                },
+                "capabilities": [
+                    "vision",
+                    "function_calling",
+                    "pdf_input",
+                    "reasoning",
+                    "prompt_caching"
+                ],
+                "categories": [
+                    "chat",
+                    "reasoning"
+                ],
+                "input_formats": [
+                    "text",
+                    "image",
+                    "pdf"
+                ],
+                "output_formats": [
+                    "text"
+                ],
+                "pricing": {
+                    "1m_tokens": {
+                        "input": 10,
+                        "output": 50,
+                        "cache_write": 12.5,
+                        "cache_read": 1
+                    }
+                },
+                "deprecation_date": null
+            },
+            {
                 "label": "gpt-5.6-cyber",
                 "name": {
                     "en": "GPT 5.6 Cyber",
@@ -741,69 +783,7 @@
                 "deprecation_date": null
             },
             {
-                "label": "gpt-4o-transcribe",
-                "name": {
-                    "en": "GPT 4o Transcribe",
-                    "fr": "GPT 4o Transcribe"
-                },
-                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/openai-svgrepo-com.svg?_wwcv=1778299695154",
-                "llm_config": "default",
-                "description": null,
-                "context_window": {
-                    "input": 16000,
-                    "output": 2000
-                },
-                "capabilities": [],
-                "categories": [
-                    "transcription"
-                ],
-                "input_formats": [
-                    "audio"
-                ],
-                "output_formats": [
-                    "text"
-                ],
-                "pricing": {
-                    "1m_tokens": {
-                        "input": 2.5,
-                        "output": 10
-                    }
-                },
-                "deprecation_date": null
-            },
-            {
-                "label": "gpt-4o-transcribe-diarize",
-                "name": {
-                    "en": "GPT 4o Transcribe Diarize",
-                    "fr": "GPT 4o Transcribe Diarize"
-                },
-                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/openai-svgrepo-com.svg?_wwcv=1778299695154",
-                "llm_config": "default",
-                "description": null,
-                "context_window": {
-                    "input": 16000,
-                    "output": 2000
-                },
-                "capabilities": [],
-                "categories": [
-                    "transcription"
-                ],
-                "input_formats": [
-                    "audio"
-                ],
-                "output_formats": [
-                    "text"
-                ],
-                "pricing": {
-                    "1m_tokens": {
-                        "input": 2.5,
-                        "output": 10
-                    }
-                },
-                "deprecation_date": null
-            },
-            {
-                "label": "gpt-4o-mini-transcribe",
+                "label": "gpt-4o-mini-transcribe-2025-12-15",
                 "name": {
                     "en": "GPT 4o Mini Transcribe",
                     "fr": "GPT 4o Mini Transcribe"
@@ -946,9 +926,6 @@
                         "input": 4,
                         "output": 24,
                         "cache_read": 0.4
-                    },
-                    "per_image": {
-                        "input": 0.000005
                     }
                 },
                 "deprecation_date": null
@@ -964,7 +941,7 @@
                 "description": null,
                 "context_window": {
                     "input": 128000,
-                    "output": 4096
+                    "output": 32000
                 },
                 "capabilities": [
                     "function_calling",
@@ -987,9 +964,6 @@
                         "input": 0.6,
                         "output": 2.4,
                         "cache_read": 0.06
-                    },
-                    "per_image": {
-                        "input": 0.000001
                     }
                 },
                 "deprecation_date": null
@@ -1004,8 +978,8 @@
                 "llm_config": "default",
                 "description": null,
                 "context_window": {
-                    "input": 32000,
-                    "output": 4096
+                    "input": 128000,
+                    "output": 32000
                 },
                 "capabilities": [
                     "function_calling",
@@ -1026,11 +1000,8 @@
                 "pricing": {
                     "1m_tokens": {
                         "input": 4,
-                        "output": 16,
+                        "output": 24,
                         "cache_read": 0.4
-                    },
-                    "per_image": {
-                        "input": 0.000005
                     }
                 },
                 "deprecation_date": null
@@ -1062,13 +1033,7 @@
                 "output_formats": [
                     "image"
                 ],
-                "pricing": {
-                    "1m_tokens": {
-                        "input": 5,
-                        "output": 10,
-                        "cache_read": 1.25
-                    }
-                },
+                "pricing": null,
                 "deprecation_date": null
             },
             {
@@ -1105,9 +1070,6 @@
                         "input": 4,
                         "output": 16,
                         "cache_read": 0.4
-                    },
-                    "per_image": {
-                        "input": 0.000005
                     }
                 },
                 "deprecation_date": null
@@ -1205,37 +1167,6 @@
                 "pricing": {
                     "per_1m_characters": {
                         "input": 30
-                    }
-                },
-                "deprecation_date": null
-            },
-            {
-                "label": "whisper-1",
-                "name": {
-                    "en": "Whisper 1",
-                    "fr": "Whisper 1"
-                },
-                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/openai-svgrepo-com.svg?_wwcv=1778299695154",
-                "llm_config": "default",
-                "description": null,
-                "context_window": {
-                    "input": null,
-                    "output": null
-                },
-                "capabilities": [],
-                "categories": [
-                    "transcription"
-                ],
-                "input_formats": [
-                    "audio"
-                ],
-                "output_formats": [
-                    "text"
-                ],
-                "pricing": {
-                    "per_minute": {
-                        "input": 0.006,
-                        "output": 0.006
                     }
                 },
                 "deprecation_date": null
@@ -1397,6 +1328,49 @@
         },
         "models": [
             {
+                "label": "gemini-3.8-flash",
+                "name": {
+                    "en": "Gemini 3.8 Flash",
+                    "fr": "Gemini 3.8 Flash"
+                },
+                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Google_Gemini_icon_2025.svg?_wwcv=1778299695150",
+                "llm_config": "default",
+                "description": null,
+                "context_window": {
+                    "input": 1048576,
+                    "output": 65536
+                },
+                "capabilities": [
+                    "vision",
+                    "function_calling",
+                    "audio_input",
+                    "pdf_input",
+                    "reasoning",
+                    "prompt_caching"
+                ],
+                "categories": [
+                    "chat",
+                    "reasoning"
+                ],
+                "input_formats": [
+                    "text",
+                    "image",
+                    "audio",
+                    "pdf"
+                ],
+                "output_formats": [
+                    "text"
+                ],
+                "pricing": {
+                    "1m_tokens": {
+                        "input": 0.75,
+                        "output": 3.75,
+                        "cache_read": 0.075
+                    }
+                },
+                "deprecation_date": null
+            },
+            {
                 "label": "gemini-3.7-flash",
                 "name": {
                     "en": "Gemini 3.7 Flash",
@@ -1492,8 +1466,8 @@
                 "llm_config": "default",
                 "description": null,
                 "context_window": {
-                    "input": null,
-                    "output": null
+                    "input": 131072,
+                    "output": 65536
                 },
                 "capabilities": [
                     "audio_input",
@@ -1768,7 +1742,6 @@
                 ],
                 "input_formats": [
                     "text",
-                    "image",
                     "audio"
                 ],
                 "output_formats": [
@@ -2150,6 +2123,42 @@
                 "deprecation_date": null
             },
             {
+                "label": "gemini-2.5-flash-native-audio-preview-09-2025",
+                "name": {
+                    "en": "Gemini 2.5 Flash Native Audio Preview",
+                    "fr": "Gemini 2.5 Flash Native Audio Preview"
+                },
+                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Google_Gemini_icon_2025.svg?_wwcv=1778299695150",
+                "llm_config": "default",
+                "description": null,
+                "context_window": {
+                    "input": 1048576,
+                    "output": 8192
+                },
+                "capabilities": [
+                    "audio_input",
+                    "audio_output"
+                ],
+                "categories": [
+                    "realtime"
+                ],
+                "input_formats": [
+                    "text",
+                    "audio"
+                ],
+                "output_formats": [
+                    "text",
+                    "audio"
+                ],
+                "pricing": {
+                    "1m_tokens": {
+                        "input": 0.5,
+                        "output": 2
+                    }
+                },
+                "deprecation_date": null
+            },
+            {
                 "label": "gemini-2.5-flash-native-audio-preview-12-2025",
                 "name": {
                     "en": "Gemini 2.5 Flash Native Audio Preview",
@@ -2299,44 +2308,6 @@
                     },
                     "per_image": {
                         "output": 0.039
-                    }
-                },
-                "deprecation_date": null
-            },
-            {
-                "label": "gemini-omni-1.1-flash",
-                "name": {
-                    "en": "Gemini Omni 1.1 Flash",
-                    "fr": "Gemini Omni 1.1 Flash"
-                },
-                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Google_Gemini_icon_2025.svg?_wwcv=1778299695150",
-                "llm_config": "default",
-                "description": null,
-                "context_window": {
-                    "input": 131072,
-                    "output": 65536
-                },
-                "capabilities": [
-                    "vision",
-                    "audio_input",
-                    "reasoning"
-                ],
-                "categories": [
-                    "chat",
-                    "reasoning"
-                ],
-                "input_formats": [
-                    "text",
-                    "image",
-                    "audio"
-                ],
-                "output_formats": [
-                    "text"
-                ],
-                "pricing": {
-                    "1m_tokens": {
-                        "input": 1.5,
-                        "output": 9
                     }
                 },
                 "deprecation_date": null
@@ -3027,7 +2998,8 @@
                 "pricing": {
                     "1m_tokens": {
                         "input": 0.1,
-                        "output": 0.1
+                        "output": 0.1,
+                        "cache_read": 0.01
                     }
                 },
                 "deprecation_date": null
