@@ -11,6 +11,216 @@
         },
         "models": [
             {
+                "label": "gpt-5.6-cyber",
+                "name": {
+                    "en": "GPT 5.6 Cyber",
+                    "fr": "GPT 5.6 Cyber"
+                },
+                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/openai-svgrepo-com.svg?_wwcv=1778299695154",
+                "llm_config": "default",
+                "description": null,
+                "context_window": {
+                    "input": 400000,
+                    "output": 128000
+                },
+                "capabilities": [
+                    "vision",
+                    "function_calling",
+                    "pdf_input",
+                    "reasoning",
+                    "prompt_caching"
+                ],
+                "categories": [
+                    "chat",
+                    "reasoning"
+                ],
+                "input_formats": [
+                    "text",
+                    "image",
+                    "pdf"
+                ],
+                "output_formats": [
+                    "text"
+                ],
+                "pricing": {
+                    "1m_tokens": {
+                        "input": 12.5,
+                        "output": 75,
+                        "cache_write": 15.625,
+                        "cache_read": 1.25
+                    }
+                },
+                "deprecation_date": null
+            },
+            {
+                "label": "gpt-5.6",
+                "name": {
+                    "en": "GPT 5.6",
+                    "fr": "GPT 5.6"
+                },
+                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/openai-svgrepo-com.svg?_wwcv=1778299695154",
+                "llm_config": "default",
+                "description": null,
+                "context_window": {
+                    "input": 922000,
+                    "output": 128000
+                },
+                "capabilities": [
+                    "vision",
+                    "function_calling",
+                    "pdf_input",
+                    "reasoning",
+                    "prompt_caching"
+                ],
+                "categories": [
+                    "chat",
+                    "reasoning"
+                ],
+                "input_formats": [
+                    "text",
+                    "image",
+                    "pdf"
+                ],
+                "output_formats": [
+                    "text"
+                ],
+                "pricing": {
+                    "1m_tokens": {
+                        "input": 4,
+                        "output": 20,
+                        "cache_write": 5,
+                        "cache_read": 0.4
+                    }
+                },
+                "deprecation_date": null
+            },
+            {
+                "label": "gpt-5.6-sol",
+                "name": {
+                    "en": "GPT 5.6 Sol",
+                    "fr": "GPT 5.6 Sol"
+                },
+                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/openai-svgrepo-com.svg?_wwcv=1778299695154",
+                "llm_config": "default",
+                "description": null,
+                "context_window": {
+                    "input": 922000,
+                    "output": 128000
+                },
+                "capabilities": [
+                    "vision",
+                    "function_calling",
+                    "pdf_input",
+                    "reasoning",
+                    "prompt_caching"
+                ],
+                "categories": [
+                    "chat",
+                    "reasoning"
+                ],
+                "input_formats": [
+                    "text",
+                    "image",
+                    "pdf"
+                ],
+                "output_formats": [
+                    "text"
+                ],
+                "pricing": {
+                    "1m_tokens": {
+                        "input": 4,
+                        "output": 20,
+                        "cache_write": 5,
+                        "cache_read": 0.4
+                    }
+                },
+                "deprecation_date": null
+            },
+            {
+                "label": "gpt-5.6-terra",
+                "name": {
+                    "en": "GPT 5.6 Terra",
+                    "fr": "GPT 5.6 Terra"
+                },
+                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/openai-svgrepo-com.svg?_wwcv=1778299695154",
+                "llm_config": "default",
+                "description": null,
+                "context_window": {
+                    "input": 922000,
+                    "output": 128000
+                },
+                "capabilities": [
+                    "vision",
+                    "function_calling",
+                    "pdf_input",
+                    "reasoning",
+                    "prompt_caching"
+                ],
+                "categories": [
+                    "chat",
+                    "reasoning"
+                ],
+                "input_formats": [
+                    "text",
+                    "image",
+                    "pdf"
+                ],
+                "output_formats": [
+                    "text"
+                ],
+                "pricing": {
+                    "1m_tokens": {
+                        "input": 2,
+                        "output": 12,
+                        "cache_write": 2.5,
+                        "cache_read": 0.2
+                    }
+                },
+                "deprecation_date": null
+            },
+            {
+                "label": "gpt-5.6-luna",
+                "name": {
+                    "en": "GPT 5.6 Luna",
+                    "fr": "GPT 5.6 Luna"
+                },
+                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/openai-svgrepo-com.svg?_wwcv=1778299695154",
+                "llm_config": "default",
+                "description": null,
+                "context_window": {
+                    "input": 922000,
+                    "output": 128000
+                },
+                "capabilities": [
+                    "vision",
+                    "function_calling",
+                    "pdf_input",
+                    "reasoning",
+                    "prompt_caching"
+                ],
+                "categories": [
+                    "chat",
+                    "reasoning"
+                ],
+                "input_formats": [
+                    "text",
+                    "image",
+                    "pdf"
+                ],
+                "output_formats": [
+                    "text"
+                ],
+                "pricing": {
+                    "1m_tokens": {
+                        "input": 0.2,
+                        "output": 1.2,
+                        "cache_write": 0.25,
+                        "cache_read": 0.02
+                    }
+                },
+                "deprecation_date": null
+            },
+            {
                 "label": "gpt-5.5",
                 "name": {
                     "en": "GPT 5.5",
@@ -458,191 +668,6 @@
                 "deprecation_date": null
             },
             {
-                "label": "gpt-4.1-nano",
-                "name": {
-                    "en": "GPT 4.1 Nano",
-                    "fr": "GPT 4.1 Nano"
-                },
-                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/openai-svgrepo-com.svg?_wwcv=1778299695154",
-                "llm_config": "default",
-                "description": null,
-                "context_window": {
-                    "input": 1047576,
-                    "output": 32768
-                },
-                "capabilities": [
-                    "vision",
-                    "function_calling",
-                    "pdf_input",
-                    "prompt_caching"
-                ],
-                "categories": [
-                    "chat"
-                ],
-                "input_formats": [
-                    "text",
-                    "image",
-                    "pdf"
-                ],
-                "output_formats": [
-                    "text"
-                ],
-                "pricing": {
-                    "1m_tokens": {
-                        "input": 0.1,
-                        "output": 0.4,
-                        "cache_read": 0.025
-                    }
-                },
-                "deprecation_date": null
-            },
-            {
-                "label": "gpt-4",
-                "name": {
-                    "en": "GPT 4",
-                    "fr": "GPT 4"
-                },
-                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/openai-svgrepo-com.svg?_wwcv=1778299695154",
-                "llm_config": "default",
-                "description": null,
-                "context_window": {
-                    "input": 8192,
-                    "output": 4096
-                },
-                "capabilities": [
-                    "function_calling",
-                    "prompt_caching"
-                ],
-                "categories": [
-                    "chat"
-                ],
-                "input_formats": [
-                    "text"
-                ],
-                "output_formats": [
-                    "text"
-                ],
-                "pricing": {
-                    "1m_tokens": {
-                        "input": 30,
-                        "output": 60
-                    }
-                },
-                "deprecation_date": null
-            },
-            {
-                "label": "gpt-4-turbo",
-                "name": {
-                    "en": "GPT 4 Turbo",
-                    "fr": "GPT 4 Turbo"
-                },
-                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/openai-svgrepo-com.svg?_wwcv=1778299695154",
-                "llm_config": "default",
-                "description": null,
-                "context_window": {
-                    "input": 128000,
-                    "output": 4096
-                },
-                "capabilities": [
-                    "vision",
-                    "function_calling",
-                    "pdf_input",
-                    "prompt_caching"
-                ],
-                "categories": [
-                    "chat"
-                ],
-                "input_formats": [
-                    "text",
-                    "image",
-                    "pdf"
-                ],
-                "output_formats": [
-                    "text"
-                ],
-                "pricing": {
-                    "1m_tokens": {
-                        "input": 10,
-                        "output": 30
-                    }
-                },
-                "deprecation_date": null
-            },
-            {
-                "label": "gpt-4-turbo-preview",
-                "name": {
-                    "en": "GPT 4 Turbo Preview",
-                    "fr": "GPT 4 Turbo Preview"
-                },
-                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/openai-svgrepo-com.svg?_wwcv=1778299695154",
-                "llm_config": "default",
-                "description": null,
-                "context_window": {
-                    "input": 128000,
-                    "output": 4096
-                },
-                "capabilities": [
-                    "function_calling",
-                    "pdf_input",
-                    "prompt_caching"
-                ],
-                "categories": [
-                    "chat"
-                ],
-                "input_formats": [
-                    "text",
-                    "pdf"
-                ],
-                "output_formats": [
-                    "text"
-                ],
-                "pricing": {
-                    "1m_tokens": {
-                        "input": 10,
-                        "output": 30
-                    }
-                },
-                "deprecation_date": null
-            },
-            {
-                "label": "gpt-4o-realtime-preview",
-                "name": {
-                    "en": "GPT 4o Realtime Preview",
-                    "fr": "GPT 4o Realtime Preview"
-                },
-                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/openai-svgrepo-com.svg?_wwcv=1778299695154",
-                "llm_config": "default",
-                "description": null,
-                "context_window": {
-                    "input": 128000,
-                    "output": 4096
-                },
-                "capabilities": [
-                    "function_calling",
-                    "audio_input",
-                    "audio_output"
-                ],
-                "categories": [
-                    "realtime"
-                ],
-                "input_formats": [
-                    "text",
-                    "audio"
-                ],
-                "output_formats": [
-                    "text",
-                    "audio"
-                ],
-                "pricing": {
-                    "1m_tokens": {
-                        "input": 5,
-                        "output": 20,
-                        "cache_read": 2.5
-                    }
-                },
-                "deprecation_date": null
-            },
-            {
                 "label": "gpt-4o",
                 "name": {
                     "en": "GPT 4o",
@@ -677,43 +702,6 @@
                         "input": 2.5,
                         "output": 10,
                         "cache_read": 1.25
-                    }
-                },
-                "deprecation_date": null
-            },
-            {
-                "label": "gpt-4o-audio-preview",
-                "name": {
-                    "en": "GPT 4o Audio Preview",
-                    "fr": "GPT 4o Audio Preview"
-                },
-                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/openai-svgrepo-com.svg?_wwcv=1778299695154",
-                "llm_config": "default",
-                "description": null,
-                "context_window": {
-                    "input": 128000,
-                    "output": 16384
-                },
-                "capabilities": [
-                    "function_calling",
-                    "audio_input",
-                    "audio_output"
-                ],
-                "categories": [
-                    "realtime"
-                ],
-                "input_formats": [
-                    "text",
-                    "audio"
-                ],
-                "output_formats": [
-                    "text",
-                    "audio"
-                ],
-                "pricing": {
-                    "1m_tokens": {
-                        "input": 2.5,
-                        "output": 10
                     }
                 },
                 "deprecation_date": null
@@ -846,84 +834,6 @@
                 "deprecation_date": null
             },
             {
-                "label": "o4-mini",
-                "name": {
-                    "en": "O4 Mini",
-                    "fr": "O4 Mini"
-                },
-                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/openai-svgrepo-com.svg?_wwcv=1778299695154",
-                "llm_config": "default",
-                "description": null,
-                "context_window": {
-                    "input": 200000,
-                    "output": 100000
-                },
-                "capabilities": [
-                    "vision",
-                    "function_calling",
-                    "pdf_input",
-                    "reasoning",
-                    "prompt_caching"
-                ],
-                "categories": [
-                    "reasoning"
-                ],
-                "input_formats": [
-                    "text",
-                    "image",
-                    "pdf"
-                ],
-                "output_formats": [
-                    "text"
-                ],
-                "pricing": {
-                    "1m_tokens": {
-                        "input": 1.1,
-                        "output": 4.4,
-                        "cache_read": 0.275
-                    }
-                },
-                "deprecation_date": null
-            },
-            {
-                "label": "gpt-4o-mini-realtime-preview",
-                "name": {
-                    "en": "GPT 4o Mini Realtime Preview",
-                    "fr": "GPT 4o Mini Realtime Preview"
-                },
-                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/openai-svgrepo-com.svg?_wwcv=1778299695154",
-                "llm_config": "default",
-                "description": null,
-                "context_window": {
-                    "input": 128000,
-                    "output": 4096
-                },
-                "capabilities": [
-                    "function_calling",
-                    "audio_input",
-                    "audio_output"
-                ],
-                "categories": [
-                    "realtime"
-                ],
-                "input_formats": [
-                    "text",
-                    "audio"
-                ],
-                "output_formats": [
-                    "text",
-                    "audio"
-                ],
-                "pricing": {
-                    "1m_tokens": {
-                        "input": 0.6,
-                        "output": 2.4,
-                        "cache_read": 0.3
-                    }
-                },
-                "deprecation_date": null
-            },
-            {
                 "label": "gpt-4o-mini",
                 "name": {
                     "en": "GPT 4o Mini",
@@ -958,43 +868,6 @@
                         "input": 0.15,
                         "output": 0.6,
                         "cache_read": 0.075
-                    }
-                },
-                "deprecation_date": null
-            },
-            {
-                "label": "gpt-4o-mini-audio-preview",
-                "name": {
-                    "en": "GPT 4o Mini Audio Preview",
-                    "fr": "GPT 4o Mini Audio Preview"
-                },
-                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/openai-svgrepo-com.svg?_wwcv=1778299695154",
-                "llm_config": "default",
-                "description": null,
-                "context_window": {
-                    "input": 128000,
-                    "output": 16384
-                },
-                "capabilities": [
-                    "function_calling",
-                    "audio_input",
-                    "audio_output"
-                ],
-                "categories": [
-                    "realtime"
-                ],
-                "input_formats": [
-                    "text",
-                    "audio"
-                ],
-                "output_formats": [
-                    "text",
-                    "audio"
-                ],
-                "pricing": {
-                    "1m_tokens": {
-                        "input": 0.15,
-                        "output": 0.6
                     }
                 },
                 "deprecation_date": null
@@ -1040,67 +913,83 @@
                 "deprecation_date": null
             },
             {
-                "label": "o3-mini",
+                "label": "gpt-realtime-2.1",
                 "name": {
-                    "en": "O3 Mini",
-                    "fr": "O3 Mini"
+                    "en": "GPT Realtime 2.1",
+                    "fr": "GPT Realtime 2.1"
                 },
                 "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/openai-svgrepo-com.svg?_wwcv=1778299695154",
                 "llm_config": "default",
                 "description": null,
                 "context_window": {
-                    "input": 200000,
-                    "output": 100000
+                    "input": 128000,
+                    "output": 32000
                 },
                 "capabilities": [
                     "function_calling",
-                    "reasoning",
-                    "prompt_caching"
+                    "audio_input",
+                    "audio_output"
                 ],
                 "categories": [
-                    "reasoning"
+                    "realtime"
                 ],
                 "input_formats": [
-                    "text"
+                    "text",
+                    "audio"
                 ],
                 "output_formats": [
-                    "text"
+                    "text",
+                    "audio"
                 ],
                 "pricing": {
                     "1m_tokens": {
-                        "input": 1.1,
-                        "output": 4.4,
-                        "cache_read": 0.55
+                        "input": 4,
+                        "output": 24,
+                        "cache_read": 0.4
+                    },
+                    "per_image": {
+                        "input": 0.000005
                     }
                 },
                 "deprecation_date": null
             },
             {
-                "label": "dall-e-3",
+                "label": "gpt-realtime-2.1-mini",
                 "name": {
-                    "en": "DALL-E 3",
-                    "fr": "DALL-E 3"
+                    "en": "GPT Realtime 2.1 Mini",
+                    "fr": "GPT Realtime 2.1 Mini"
                 },
                 "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/openai-svgrepo-com.svg?_wwcv=1778299695154",
                 "llm_config": "default",
                 "description": null,
                 "context_window": {
-                    "input": null,
-                    "output": null
+                    "input": 128000,
+                    "output": 4096
                 },
-                "capabilities": [],
+                "capabilities": [
+                    "function_calling",
+                    "audio_input",
+                    "audio_output"
+                ],
                 "categories": [
-                    "image"
+                    "realtime"
                 ],
                 "input_formats": [
-                    "text"
+                    "text",
+                    "audio"
                 ],
                 "output_formats": [
-                    "image"
+                    "text",
+                    "audio"
                 ],
                 "pricing": {
+                    "1m_tokens": {
+                        "input": 0.6,
+                        "output": 2.4,
+                        "cache_read": 0.06
+                    },
                     "per_image": {
-                        "input": 0.04
+                        "input": 0.000001
                     }
                 },
                 "deprecation_date": null
@@ -1183,33 +1072,6 @@
                 "deprecation_date": null
             },
             {
-                "label": "dall-e-2",
-                "name": {
-                    "en": "DALL-E 2",
-                    "fr": "DALL-E 2"
-                },
-                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/openai-svgrepo-com.svg?_wwcv=1778299695154",
-                "llm_config": "default",
-                "description": null,
-                "context_window": {
-                    "input": null,
-                    "output": null
-                },
-                "capabilities": [],
-                "categories": [
-                    "image"
-                ],
-                "input_formats": [
-                    "text",
-                    "image"
-                ],
-                "output_formats": [
-                    "image"
-                ],
-                "pricing": null,
-                "deprecation_date": null
-            },
-            {
                 "label": "gpt-realtime-1.5",
                 "name": {
                     "en": "GPT Realtime 1.5",
@@ -1285,136 +1147,6 @@
                         "output": 10
                     }
                 },
-                "deprecation_date": null
-            },
-            {
-                "label": "gpt-image-1.5",
-                "name": {
-                    "en": "GPT Image 1.5",
-                    "fr": "GPT Image 1.5"
-                },
-                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/openai-svgrepo-com.svg?_wwcv=1778299695154",
-                "llm_config": "default",
-                "description": null,
-                "context_window": {
-                    "input": null,
-                    "output": null
-                },
-                "capabilities": [
-                    "vision",
-                    "pdf_input"
-                ],
-                "categories": [
-                    "image"
-                ],
-                "input_formats": [
-                    "text",
-                    "image"
-                ],
-                "output_formats": [
-                    "image"
-                ],
-                "pricing": {
-                    "1m_tokens": {
-                        "input": 5,
-                        "output": 10,
-                        "cache_read": 1.25
-                    }
-                },
-                "deprecation_date": null
-            },
-            {
-                "label": "o1",
-                "name": {
-                    "en": "O1",
-                    "fr": "O1"
-                },
-                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/openai-svgrepo-com.svg?_wwcv=1778299695154",
-                "llm_config": "default",
-                "description": null,
-                "context_window": {
-                    "input": 200000,
-                    "output": 100000
-                },
-                "capabilities": [
-                    "vision",
-                    "function_calling",
-                    "pdf_input",
-                    "reasoning",
-                    "prompt_caching"
-                ],
-                "categories": [
-                    "reasoning"
-                ],
-                "input_formats": [
-                    "text",
-                    "image",
-                    "pdf"
-                ],
-                "output_formats": [
-                    "text"
-                ],
-                "pricing": {
-                    "1m_tokens": {
-                        "input": 15,
-                        "output": 60,
-                        "cache_read": 7.5
-                    }
-                },
-                "deprecation_date": null
-            },
-            {
-                "label": "gpt-image-1",
-                "name": {
-                    "en": "GPT Image 1",
-                    "fr": "GPT Image 1"
-                },
-                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/openai-svgrepo-com.svg?_wwcv=1778299695154",
-                "llm_config": "default",
-                "description": null,
-                "context_window": {
-                    "input": null,
-                    "output": null
-                },
-                "capabilities": [],
-                "categories": [
-                    "image"
-                ],
-                "input_formats": [
-                    "text",
-                    "image"
-                ],
-                "output_formats": [
-                    "image"
-                ],
-                "pricing": null,
-                "deprecation_date": null
-            },
-            {
-                "label": "gpt-image-1-mini",
-                "name": {
-                    "en": "GPT Image 1 Mini",
-                    "fr": "GPT Image 1 Mini"
-                },
-                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/openai-svgrepo-com.svg?_wwcv=1778299695154",
-                "llm_config": "default",
-                "description": null,
-                "context_window": {
-                    "input": null,
-                    "output": null
-                },
-                "capabilities": [],
-                "categories": [
-                    "image"
-                ],
-                "input_formats": [
-                    "text",
-                    "image"
-                ],
-                "output_formats": [
-                    "image"
-                ],
-                "pricing": null,
                 "deprecation_date": null
             },
             {
@@ -1509,61 +1241,51 @@
                 "deprecation_date": null
             },
             {
-                "label": "gpt-realtime",
+                "label": "gpt-live-transcribe",
                 "name": {
-                    "en": "GPT Realtime",
-                    "fr": "GPT Realtime"
+                    "en": "GPT Live Transcribe",
+                    "fr": "GPT Live Transcribe"
                 },
                 "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/openai-svgrepo-com.svg?_wwcv=1778299695154",
                 "llm_config": "default",
                 "description": null,
                 "context_window": {
-                    "input": 32000,
-                    "output": 4096
+                    "input": null,
+                    "output": null
                 },
                 "capabilities": [
-                    "function_calling",
-                    "audio_input",
-                    "audio_output"
+                    "audio_input"
                 ],
                 "categories": [
-                    "realtime"
+                    "transcription"
                 ],
                 "input_formats": [
-                    "text",
                     "audio"
                 ],
                 "output_formats": [
-                    "text",
-                    "audio"
+                    "text"
                 ],
                 "pricing": {
-                    "1m_tokens": {
-                        "input": 4,
-                        "output": 16,
-                        "cache_read": 0.4
-                    },
-                    "per_image": {
-                        "input": 0.000005
+                    "per_minute": {
+                        "input": 0.017
                     }
                 },
                 "deprecation_date": null
             },
             {
-                "label": "gpt-audio",
+                "label": "gpt-realtime-translate",
                 "name": {
-                    "en": "GPT Audio",
-                    "fr": "GPT Audio"
+                    "en": "GPT Realtime Translate",
+                    "fr": "GPT Realtime Translate"
                 },
                 "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/openai-svgrepo-com.svg?_wwcv=1778299695154",
                 "llm_config": "default",
                 "description": null,
                 "context_window": {
-                    "input": 128000,
-                    "output": 16384
+                    "input": 16000,
+                    "output": 2000
                 },
                 "capabilities": [
-                    "function_calling",
                     "audio_input",
                     "audio_output"
                 ],
@@ -1579,83 +1301,72 @@
                     "audio"
                 ],
                 "pricing": {
-                    "1m_tokens": {
-                        "input": 2.5,
-                        "output": 10
+                    "per_minute": {
+                        "input": 0.034
                     }
                 },
                 "deprecation_date": null
             },
             {
-                "label": "gpt-audio-mini",
+                "label": "gpt-realtime-whisper",
                 "name": {
-                    "en": "GPT Audio Mini",
-                    "fr": "GPT Audio Mini"
+                    "en": "GPT Realtime Whisper",
+                    "fr": "GPT Realtime Whisper"
                 },
                 "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/openai-svgrepo-com.svg?_wwcv=1778299695154",
                 "llm_config": "default",
                 "description": null,
                 "context_window": {
-                    "input": 128000,
-                    "output": 16384
+                    "input": null,
+                    "output": null
                 },
                 "capabilities": [
-                    "function_calling",
-                    "audio_input",
-                    "audio_output"
+                    "audio_input"
                 ],
                 "categories": [
-                    "realtime"
+                    "transcription"
                 ],
                 "input_formats": [
-                    "text",
                     "audio"
                 ],
                 "output_formats": [
-                    "text",
-                    "audio"
+                    "text"
                 ],
                 "pricing": {
-                    "1m_tokens": {
-                        "input": 0.6,
-                        "output": 2.4
+                    "per_minute": {
+                        "input": 0.017
                     }
                 },
                 "deprecation_date": null
             },
             {
-                "label": "gpt-realtime-mini",
+                "label": "gpt-transcribe",
                 "name": {
-                    "en": "GPT Realtime Mini",
-                    "fr": "GPT Realtime Mini"
+                    "en": "GPT Transcribe",
+                    "fr": "GPT Transcribe"
                 },
                 "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/openai-svgrepo-com.svg?_wwcv=1778299695154",
                 "llm_config": "default",
                 "description": null,
                 "context_window": {
-                    "input": 128000,
-                    "output": 4096
+                    "input": null,
+                    "output": null
                 },
                 "capabilities": [
-                    "function_calling",
-                    "audio_input",
-                    "audio_output"
+                    "audio_input"
                 ],
                 "categories": [
-                    "realtime"
+                    "transcription"
                 ],
                 "input_formats": [
-                    "text",
                     "audio"
                 ],
                 "output_formats": [
-                    "text",
-                    "audio"
+                    "text"
                 ],
                 "pricing": {
-                    "1m_tokens": {
-                        "input": 0.6,
-                        "output": 2.4
+                    "per_minute": {
+                        "input": 0.0045
                     }
                 },
                 "deprecation_date": null
@@ -1672,344 +1383,7 @@
             "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Symbol.svg?_wwcv=1778299695142",
             "model_docs": "https://docs.anthropic.com/en/docs/about-claude/models/overview"
         },
-        "models": [
-            {
-                "label": "claude-opus-4-8",
-                "name": {
-                    "en": "Claude Opus 4.8",
-                    "fr": "Claude Opus 4.8"
-                },
-                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Claude_AI_symbol.svg?_wwcv=1778299695158",
-                "llm_config": "default",
-                "description": null,
-                "context_window": {
-                    "input": 1000000,
-                    "output": 128000
-                },
-                "capabilities": [
-                    "vision",
-                    "function_calling",
-                    "pdf_input",
-                    "reasoning",
-                    "prompt_caching"
-                ],
-                "categories": [
-                    "chat",
-                    "reasoning"
-                ],
-                "input_formats": [
-                    "text",
-                    "image",
-                    "pdf"
-                ],
-                "output_formats": [
-                    "text"
-                ],
-                "pricing": {
-                    "1m_tokens": {
-                        "input": 5,
-                        "output": 25,
-                        "cache_write": 6.25,
-                        "cache_read": 0.5
-                    }
-                },
-                "deprecation_date": null
-            },
-            {
-                "label": "claude-opus-4-7",
-                "name": {
-                    "en": "Claude Opus 4.7",
-                    "fr": "Claude Opus 4.7"
-                },
-                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Claude_AI_symbol.svg?_wwcv=1778299695158",
-                "llm_config": "default",
-                "description": null,
-                "context_window": {
-                    "input": 1000000,
-                    "output": 128000
-                },
-                "capabilities": [
-                    "vision",
-                    "function_calling",
-                    "pdf_input",
-                    "reasoning",
-                    "prompt_caching"
-                ],
-                "categories": [
-                    "chat",
-                    "reasoning"
-                ],
-                "input_formats": [
-                    "text",
-                    "image",
-                    "pdf"
-                ],
-                "output_formats": [
-                    "text"
-                ],
-                "pricing": {
-                    "1m_tokens": {
-                        "input": 5,
-                        "output": 25,
-                        "cache_write": 6.25,
-                        "cache_read": 0.5
-                    }
-                },
-                "deprecation_date": null
-            },
-            {
-                "label": "claude-opus-4-6",
-                "name": {
-                    "en": "Claude Opus 4.6",
-                    "fr": "Claude Opus 4.6"
-                },
-                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Claude_AI_symbol.svg?_wwcv=1778299695158",
-                "llm_config": "default",
-                "description": null,
-                "context_window": {
-                    "input": 1000000,
-                    "output": 128000
-                },
-                "capabilities": [
-                    "vision",
-                    "function_calling",
-                    "pdf_input",
-                    "reasoning",
-                    "prompt_caching"
-                ],
-                "categories": [
-                    "chat",
-                    "reasoning"
-                ],
-                "input_formats": [
-                    "text",
-                    "image",
-                    "pdf"
-                ],
-                "output_formats": [
-                    "text"
-                ],
-                "pricing": {
-                    "1m_tokens": {
-                        "input": 5,
-                        "output": 25,
-                        "cache_write": 6.25,
-                        "cache_read": 0.5
-                    }
-                },
-                "deprecation_date": null
-            },
-            {
-                "label": "claude-sonnet-4-6",
-                "name": {
-                    "en": "Claude Sonnet 4.6",
-                    "fr": "Claude Sonnet 4.6"
-                },
-                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Claude_AI_symbol.svg?_wwcv=1778299695158",
-                "llm_config": "default",
-                "description": null,
-                "context_window": {
-                    "input": 1000000,
-                    "output": 64000
-                },
-                "capabilities": [
-                    "vision",
-                    "function_calling",
-                    "pdf_input",
-                    "reasoning",
-                    "prompt_caching"
-                ],
-                "categories": [
-                    "chat",
-                    "reasoning"
-                ],
-                "input_formats": [
-                    "text",
-                    "image",
-                    "pdf"
-                ],
-                "output_formats": [
-                    "text"
-                ],
-                "pricing": {
-                    "1m_tokens": {
-                        "input": 3,
-                        "output": 15,
-                        "cache_write": 3.75,
-                        "cache_read": 0.3
-                    }
-                },
-                "deprecation_date": null
-            },
-            {
-                "label": "claude-opus-4-5",
-                "name": {
-                    "en": "Claude Opus 4.5",
-                    "fr": "Claude Opus 4.5"
-                },
-                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Claude_AI_symbol.svg?_wwcv=1778299695158",
-                "llm_config": "default",
-                "description": null,
-                "context_window": {
-                    "input": 200000,
-                    "output": 64000
-                },
-                "capabilities": [
-                    "vision",
-                    "function_calling",
-                    "pdf_input",
-                    "reasoning",
-                    "prompt_caching"
-                ],
-                "categories": [
-                    "chat",
-                    "reasoning"
-                ],
-                "input_formats": [
-                    "text",
-                    "image",
-                    "pdf"
-                ],
-                "output_formats": [
-                    "text"
-                ],
-                "pricing": {
-                    "1m_tokens": {
-                        "input": 5,
-                        "output": 25,
-                        "cache_write": 6.25,
-                        "cache_read": 0.5
-                    }
-                },
-                "deprecation_date": null
-            },
-            {
-                "label": "claude-sonnet-4-5",
-                "name": {
-                    "en": "Claude Sonnet 4.5",
-                    "fr": "Claude Sonnet 4.5"
-                },
-                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Claude_AI_symbol.svg?_wwcv=1778299695158",
-                "llm_config": "default",
-                "description": null,
-                "context_window": {
-                    "input": 200000,
-                    "output": 64000
-                },
-                "capabilities": [
-                    "vision",
-                    "function_calling",
-                    "pdf_input",
-                    "reasoning",
-                    "prompt_caching"
-                ],
-                "categories": [
-                    "chat",
-                    "reasoning"
-                ],
-                "input_formats": [
-                    "text",
-                    "image",
-                    "pdf"
-                ],
-                "output_formats": [
-                    "text"
-                ],
-                "pricing": {
-                    "1m_tokens": {
-                        "input": 3,
-                        "output": 15,
-                        "cache_write": 3.75,
-                        "cache_read": 0.3
-                    }
-                },
-                "deprecation_date": null
-            },
-            {
-                "label": "claude-haiku-4-5",
-                "name": {
-                    "en": "Claude Haiku 4.5",
-                    "fr": "Claude Haiku 4.5"
-                },
-                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Claude_AI_symbol.svg?_wwcv=1778299695158",
-                "llm_config": "default",
-                "description": null,
-                "context_window": {
-                    "input": 200000,
-                    "output": 64000
-                },
-                "capabilities": [
-                    "vision",
-                    "function_calling",
-                    "pdf_input",
-                    "reasoning",
-                    "prompt_caching"
-                ],
-                "categories": [
-                    "chat",
-                    "reasoning"
-                ],
-                "input_formats": [
-                    "text",
-                    "image",
-                    "pdf"
-                ],
-                "output_formats": [
-                    "text"
-                ],
-                "pricing": {
-                    "1m_tokens": {
-                        "input": 1,
-                        "output": 5,
-                        "cache_write": 1.25,
-                        "cache_read": 0.1
-                    }
-                },
-                "deprecation_date": null
-            },
-            {
-                "label": "claude-opus-4-1",
-                "name": {
-                    "en": "Claude Opus 4.1",
-                    "fr": "Claude Opus 4.1"
-                },
-                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Claude_AI_symbol.svg?_wwcv=1778299695158",
-                "llm_config": "default",
-                "description": null,
-                "context_window": {
-                    "input": 200000,
-                    "output": 32000
-                },
-                "capabilities": [
-                    "vision",
-                    "function_calling",
-                    "pdf_input",
-                    "reasoning",
-                    "prompt_caching"
-                ],
-                "categories": [
-                    "chat",
-                    "reasoning"
-                ],
-                "input_formats": [
-                    "text",
-                    "image",
-                    "pdf"
-                ],
-                "output_formats": [
-                    "text"
-                ],
-                "pricing": {
-                    "1m_tokens": {
-                        "input": 15,
-                        "output": 75,
-                        "cache_write": 18.75,
-                        "cache_read": 1.5
-                    }
-                },
-                "deprecation_date": null
-            }
-        ]
+        "models": []
     },
     {
         "provider": "google",
@@ -2023,70 +1397,96 @@
         },
         "models": [
             {
-                "label": "imagen-4.0-fast-generate-001",
+                "label": "gemini-3.7-flash",
                 "name": {
-                    "en": "Imagen 4.0 Fast Generate",
-                    "fr": "Imagen 4.0 Fast Generate"
+                    "en": "Gemini 3.7 Flash",
+                    "fr": "Gemini 3.7 Flash"
                 },
                 "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Google_Gemini_icon_2025.svg?_wwcv=1778299695150",
                 "llm_config": "default",
                 "description": null,
                 "context_window": {
-                    "input": null,
-                    "output": null
+                    "input": 1048576,
+                    "output": 65536
                 },
-                "capabilities": [],
+                "capabilities": [
+                    "vision",
+                    "function_calling",
+                    "audio_input",
+                    "pdf_input",
+                    "reasoning",
+                    "prompt_caching"
+                ],
                 "categories": [
-                    "image"
+                    "chat",
+                    "reasoning"
                 ],
                 "input_formats": [
-                    "text"
+                    "text",
+                    "image",
+                    "audio",
+                    "pdf"
                 ],
                 "output_formats": [
-                    "image"
+                    "text"
                 ],
                 "pricing": {
-                    "per_image": {
-                        "output": 0.02
+                    "1m_tokens": {
+                        "input": 0.75,
+                        "output": 3.75,
+                        "cache_read": 0.075
                     }
                 },
                 "deprecation_date": null
             },
             {
-                "label": "imagen-4.0-generate-001",
+                "label": "gemini-3.6-flash",
                 "name": {
-                    "en": "Imagen 4.0 Generate",
-                    "fr": "Imagen 4.0 Generate"
+                    "en": "Gemini 3.6 Flash",
+                    "fr": "Gemini 3.6 Flash"
                 },
                 "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Google_Gemini_icon_2025.svg?_wwcv=1778299695150",
                 "llm_config": "default",
                 "description": null,
                 "context_window": {
-                    "input": null,
-                    "output": null
+                    "input": 1048576,
+                    "output": 65536
                 },
-                "capabilities": [],
+                "capabilities": [
+                    "vision",
+                    "function_calling",
+                    "audio_input",
+                    "pdf_input",
+                    "reasoning",
+                    "prompt_caching"
+                ],
                 "categories": [
-                    "image"
+                    "chat",
+                    "reasoning"
                 ],
                 "input_formats": [
-                    "text"
+                    "text",
+                    "image",
+                    "audio",
+                    "pdf"
                 ],
                 "output_formats": [
-                    "image"
+                    "text"
                 ],
                 "pricing": {
-                    "per_image": {
-                        "output": 0.04
+                    "1m_tokens": {
+                        "input": 0.75,
+                        "output": 3.75,
+                        "cache_read": 0.075
                     }
                 },
                 "deprecation_date": null
             },
             {
-                "label": "imagen-4.0-ultra-generate-001",
+                "label": "gemini-3.5-live-translate-preview",
                 "name": {
-                    "en": "Imagen 4.0 Ultra Generate",
-                    "fr": "Imagen 4.0 Ultra Generate"
+                    "en": "Gemini 3.5 Live Translate Preview",
+                    "fr": "Gemini 3.5 Live Translate Preview"
                 },
                 "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Google_Gemini_icon_2025.svg?_wwcv=1778299695150",
                 "llm_config": "default",
@@ -2095,19 +1495,91 @@
                     "input": null,
                     "output": null
                 },
-                "capabilities": [],
+                "capabilities": [
+                    "audio_input",
+                    "audio_output"
+                ],
                 "categories": [
-                    "image"
+                    "realtime"
                 ],
                 "input_formats": [
-                    "text"
+                    "text",
+                    "audio"
                 ],
                 "output_formats": [
-                    "image"
+                    "text",
+                    "audio"
                 ],
                 "pricing": {
-                    "per_image": {
-                        "output": 0.06
+                    "1m_tokens": {
+                        "input": 3.5,
+                        "output": 21
+                    }
+                },
+                "deprecation_date": null
+            },
+            {
+                "label": "gemini-3.5-transcribe-live",
+                "name": {
+                    "en": "Gemini 3.5 Transcribe Live",
+                    "fr": "Gemini 3.5 Transcribe Live"
+                },
+                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Google_Gemini_icon_2025.svg?_wwcv=1778299695150",
+                "llm_config": "default",
+                "description": null,
+                "context_window": {
+                    "input": null,
+                    "output": null
+                },
+                "capabilities": [
+                    "audio_input"
+                ],
+                "categories": [
+                    "transcription"
+                ],
+                "input_formats": [
+                    "audio"
+                ],
+                "output_formats": [
+                    "text"
+                ],
+                "pricing": {
+                    "1m_tokens": {
+                        "input": 3.5,
+                        "output": 21
+                    }
+                },
+                "deprecation_date": null
+            },
+            {
+                "label": "gemini-3.5-transcribe",
+                "name": {
+                    "en": "Gemini 3.5 Transcribe",
+                    "fr": "Gemini 3.5 Transcribe"
+                },
+                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Google_Gemini_icon_2025.svg?_wwcv=1778299695150",
+                "llm_config": "default",
+                "description": null,
+                "context_window": {
+                    "input": null,
+                    "output": null
+                },
+                "capabilities": [
+                    "audio_input"
+                ],
+                "categories": [
+                    "transcription"
+                ],
+                "input_formats": [
+                    "audio"
+                ],
+                "output_formats": [
+                    "text"
+                ],
+                "pricing": {
+                    "1m_tokens": {
+                        "input": 2,
+                        "output": 12
                     }
                 },
                 "deprecation_date": null
@@ -2151,6 +1623,80 @@
                         "input": 1.5,
                         "output": 9,
                         "cache_read": 0.15
+                    }
+                },
+                "deprecation_date": null
+            },
+            {
+                "label": "gemini-3.5-flash-lite",
+                "name": {
+                    "en": "Gemini 3.5 Flash Lite",
+                    "fr": "Gemini 3.5 Flash Lite"
+                },
+                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Google_Gemini_icon_2025.svg?_wwcv=1778299695150",
+                "llm_config": "default",
+                "description": null,
+                "context_window": {
+                    "input": 1048576,
+                    "output": 65536
+                },
+                "capabilities": [
+                    "vision",
+                    "function_calling",
+                    "audio_input",
+                    "pdf_input",
+                    "reasoning",
+                    "prompt_caching"
+                ],
+                "categories": [
+                    "chat",
+                    "reasoning"
+                ],
+                "input_formats": [
+                    "text",
+                    "image",
+                    "audio",
+                    "pdf"
+                ],
+                "output_formats": [
+                    "text"
+                ],
+                "pricing": {
+                    "1m_tokens": {
+                        "input": 0.3,
+                        "output": 2.5,
+                        "cache_read": 0.03
+                    }
+                },
+                "deprecation_date": null
+            },
+            {
+                "label": "gemini-3.1-flash-tts-preview",
+                "name": {
+                    "en": "Gemini 3.1 Flash TTS Preview",
+                    "fr": "Gemini 3.1 Flash TTS Preview"
+                },
+                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Google_Gemini_icon_2025.svg?_wwcv=1778299695150",
+                "llm_config": "default",
+                "description": null,
+                "context_window": {
+                    "input": 8192,
+                    "output": 16384
+                },
+                "capabilities": [],
+                "categories": [
+                    "speech"
+                ],
+                "input_formats": [
+                    "text"
+                ],
+                "output_formats": [
+                    "audio"
+                ],
+                "pricing": {
+                    "1m_tokens": {
+                        "input": 1,
+                        "output": 20
                     }
                 },
                 "deprecation_date": null
@@ -2238,10 +1784,10 @@
                 "deprecation_date": null
             },
             {
-                "label": "gemini-3.1-flash-image-preview",
+                "label": "gemini-3.1-flash-image",
                 "name": {
-                    "en": "Gemini 3.1 Flash Image Preview",
-                    "fr": "Gemini 3.1 Flash Image Preview"
+                    "en": "Gemini 3.1 Flash Image",
+                    "fr": "Gemini 3.1 Flash Image"
                 },
                 "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Google_Gemini_icon_2025.svg?_wwcv=1778299695150",
                 "llm_config": "default",
@@ -2265,8 +1811,8 @@
                 ],
                 "pricing": {
                     "1m_tokens": {
-                        "input": 0.25,
-                        "output": 1.5
+                        "input": 0.5,
+                        "output": 3
                     },
                     "per_image": {
                         "output": 0.045
@@ -2275,96 +1821,48 @@
                 "deprecation_date": null
             },
             {
-                "label": "gemini-3.1-flash-lite",
+                "label": "gemini-3.1-flash-lite-image",
                 "name": {
-                    "en": "Gemini 3.1 Flash Lite",
-                    "fr": "Gemini 3.1 Flash Lite"
+                    "en": "Gemini 3.1 Flash Lite Image",
+                    "fr": "Gemini 3.1 Flash Lite Image"
                 },
                 "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Google_Gemini_icon_2025.svg?_wwcv=1778299695150",
                 "llm_config": "default",
                 "description": null,
                 "context_window": {
-                    "input": 1048576,
-                    "output": 65536
+                    "input": 65536,
+                    "output": 4096
                 },
                 "capabilities": [
                     "vision",
-                    "function_calling",
-                    "audio_input",
-                    "pdf_input",
-                    "reasoning",
-                    "prompt_caching"
+                    "function_calling"
                 ],
                 "categories": [
-                    "chat",
-                    "reasoning"
+                    "image"
                 ],
                 "input_formats": [
-                    "text",
-                    "image",
-                    "audio",
-                    "pdf"
+                    "text"
                 ],
                 "output_formats": [
-                    "text"
+                    "image"
                 ],
                 "pricing": {
                     "1m_tokens": {
                         "input": 0.25,
-                        "output": 1.5,
-                        "cache_read": 0.025
+                        "output": 1.5
+                    },
+                    "per_image": {
+                        "input": 0.00028,
+                        "output": 0.0336
                     }
                 },
                 "deprecation_date": null
             },
             {
-                "label": "gemini-3.1-flash-lite-preview",
+                "label": "gemini-3-pro-image",
                 "name": {
-                    "en": "Gemini 3.1 Flash Lite Preview",
-                    "fr": "Gemini 3.1 Flash Lite Preview"
-                },
-                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Google_Gemini_icon_2025.svg?_wwcv=1778299695150",
-                "llm_config": "default",
-                "description": null,
-                "context_window": {
-                    "input": 1048576,
-                    "output": 65536
-                },
-                "capabilities": [
-                    "vision",
-                    "function_calling",
-                    "audio_input",
-                    "pdf_input",
-                    "reasoning",
-                    "prompt_caching"
-                ],
-                "categories": [
-                    "chat",
-                    "reasoning"
-                ],
-                "input_formats": [
-                    "text",
-                    "image",
-                    "audio",
-                    "pdf"
-                ],
-                "output_formats": [
-                    "text"
-                ],
-                "pricing": {
-                    "1m_tokens": {
-                        "input": 0.25,
-                        "output": 1.5,
-                        "cache_read": 0.025
-                    }
-                },
-                "deprecation_date": null
-            },
-            {
-                "label": "gemini-3-pro-image-preview",
-                "name": {
-                    "en": "Gemini 3 Pro Image Preview",
-                    "fr": "Gemini 3 Pro Image Preview"
+                    "en": "Gemini 3 Pro Image",
+                    "fr": "Gemini 3 Pro Image"
                 },
                 "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Google_Gemini_icon_2025.svg?_wwcv=1778299695150",
                 "llm_config": "default",
@@ -2500,6 +1998,74 @@
                 "deprecation_date": null
             },
             {
+                "label": "gemini-2.5-pro-preview-tts",
+                "name": {
+                    "en": "Gemini 2.5 Pro Preview TTS",
+                    "fr": "Gemini 2.5 Pro Preview TTS"
+                },
+                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Google_Gemini_icon_2025.svg?_wwcv=1778299695150",
+                "llm_config": "default",
+                "description": null,
+                "context_window": {
+                    "input": 1048576,
+                    "output": 65535
+                },
+                "capabilities": [
+                    "vision",
+                    "function_calling",
+                    "prompt_caching"
+                ],
+                "categories": [
+                    "chat"
+                ],
+                "input_formats": [
+                    "text",
+                    "image"
+                ],
+                "output_formats": [
+                    "text"
+                ],
+                "pricing": {
+                    "1m_tokens": {
+                        "input": 1,
+                        "output": 20,
+                        "cache_read": 0.125
+                    }
+                },
+                "deprecation_date": null
+            },
+            {
+                "label": "gemini-2.5-flash-preview-tts",
+                "name": {
+                    "en": "Gemini 2.5 Flash Preview TTS",
+                    "fr": "Gemini 2.5 Flash Preview TTS"
+                },
+                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Google_Gemini_icon_2025.svg?_wwcv=1778299695150",
+                "llm_config": "default",
+                "description": null,
+                "context_window": {
+                    "input": null,
+                    "output": null
+                },
+                "capabilities": [],
+                "categories": [
+                    "speech"
+                ],
+                "input_formats": [
+                    "text"
+                ],
+                "output_formats": [
+                    "audio"
+                ],
+                "pricing": {
+                    "1m_tokens": {
+                        "input": 0.5,
+                        "output": 10
+                    }
+                },
+                "deprecation_date": null
+            },
+            {
                 "label": "gemini-2.5-pro",
                 "name": {
                     "en": "Gemini 2.5 Pro",
@@ -2529,43 +2095,6 @@
                     "image",
                     "audio",
                     "pdf"
-                ],
-                "output_formats": [
-                    "text"
-                ],
-                "pricing": {
-                    "1m_tokens": {
-                        "input": 1.25,
-                        "output": 10,
-                        "cache_read": 0.125
-                    }
-                },
-                "deprecation_date": null
-            },
-            {
-                "label": "gemini-2.5-pro-preview-tts",
-                "name": {
-                    "en": "Gemini 2.5 Pro Preview TTS",
-                    "fr": "Gemini 2.5 Pro Preview TTS"
-                },
-                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Google_Gemini_icon_2025.svg?_wwcv=1778299695150",
-                "llm_config": "default",
-                "description": null,
-                "context_window": {
-                    "input": 1048576,
-                    "output": 65535
-                },
-                "capabilities": [
-                    "vision",
-                    "function_calling",
-                    "prompt_caching"
-                ],
-                "categories": [
-                    "chat"
-                ],
-                "input_formats": [
-                    "text",
-                    "image"
                 ],
                 "output_formats": [
                     "text"
@@ -2621,46 +2150,6 @@
                 "deprecation_date": null
             },
             {
-                "label": "gemini-2.5-flash-image",
-                "name": {
-                    "en": "Gemini 2.5 Flash Image",
-                    "fr": "Gemini 2.5 Flash Image"
-                },
-                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Google_Gemini_icon_2025.svg?_wwcv=1778299695150",
-                "llm_config": "default",
-                "description": null,
-                "context_window": {
-                    "input": 32768,
-                    "output": 32768
-                },
-                "capabilities": [
-                    "vision",
-                    "function_calling",
-                    "pdf_input",
-                    "prompt_caching"
-                ],
-                "categories": [
-                    "image"
-                ],
-                "input_formats": [
-                    "text"
-                ],
-                "output_formats": [
-                    "image"
-                ],
-                "pricing": {
-                    "1m_tokens": {
-                        "input": 0.3,
-                        "output": 2.5,
-                        "cache_read": 0.03
-                    },
-                    "per_image": {
-                        "output": 0.039
-                    }
-                },
-                "deprecation_date": null
-            },
-            {
                 "label": "gemini-2.5-flash-native-audio-preview-12-2025",
                 "name": {
                     "en": "Gemini 2.5 Flash Native Audio Preview",
@@ -2690,80 +2179,8 @@
                 ],
                 "pricing": {
                     "1m_tokens": {
-                        "input": 0.3,
-                        "output": 2.5
-                    }
-                },
-                "deprecation_date": null
-            },
-            {
-                "label": "gemini-2.5-flash-preview-09-2025",
-                "name": {
-                    "en": "Gemini 2.5 Flash Preview",
-                    "fr": "Gemini 2.5 Flash Preview"
-                },
-                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Google_Gemini_icon_2025.svg?_wwcv=1778299695150",
-                "llm_config": "default",
-                "description": null,
-                "context_window": {
-                    "input": 1048576,
-                    "output": 65535
-                },
-                "capabilities": [
-                    "vision",
-                    "function_calling",
-                    "pdf_input",
-                    "reasoning",
-                    "prompt_caching"
-                ],
-                "categories": [
-                    "chat",
-                    "reasoning"
-                ],
-                "input_formats": [
-                    "text",
-                    "image",
-                    "pdf"
-                ],
-                "output_formats": [
-                    "text"
-                ],
-                "pricing": {
-                    "1m_tokens": {
-                        "input": 0.3,
-                        "output": 2.5,
-                        "cache_read": 0.075
-                    }
-                },
-                "deprecation_date": null
-            },
-            {
-                "label": "gemini-2.5-flash-preview-tts",
-                "name": {
-                    "en": "Gemini 2.5 Flash Preview TTS",
-                    "fr": "Gemini 2.5 Flash Preview TTS"
-                },
-                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Google_Gemini_icon_2025.svg?_wwcv=1778299695150",
-                "llm_config": "default",
-                "description": null,
-                "context_window": {
-                    "input": null,
-                    "output": null
-                },
-                "capabilities": [],
-                "categories": [
-                    "speech"
-                ],
-                "input_formats": [
-                    "text"
-                ],
-                "output_formats": [
-                    "audio"
-                ],
-                "pricing": {
-                    "1m_tokens": {
-                        "input": 0.3,
-                        "output": 2.5
+                        "input": 0.5,
+                        "output": 2
                     }
                 },
                 "deprecation_date": null
@@ -2802,7 +2219,7 @@
                 ],
                 "pricing": {
                     "1m_tokens": {
-                        "input": 0.3,
+                        "input": 0.5,
                         "output": 2,
                         "cache_read": 0.075
                     }
@@ -2814,47 +2231,6 @@
                 "name": {
                     "en": "Gemini 2.5 Flash Lite",
                     "fr": "Gemini 2.5 Flash Lite"
-                },
-                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Google_Gemini_icon_2025.svg?_wwcv=1778299695150",
-                "llm_config": "default",
-                "description": null,
-                "context_window": {
-                    "input": 1048576,
-                    "output": 65535
-                },
-                "capabilities": [
-                    "vision",
-                    "function_calling",
-                    "pdf_input",
-                    "reasoning",
-                    "prompt_caching"
-                ],
-                "categories": [
-                    "chat",
-                    "reasoning"
-                ],
-                "input_formats": [
-                    "text",
-                    "image",
-                    "pdf"
-                ],
-                "output_formats": [
-                    "text"
-                ],
-                "pricing": {
-                    "1m_tokens": {
-                        "input": 0.1,
-                        "output": 0.4,
-                        "cache_read": 0.01
-                    }
-                },
-                "deprecation_date": null
-            },
-            {
-                "label": "gemini-2.5-flash-lite-preview-09-2025",
-                "name": {
-                    "en": "Gemini 2.5 Flash Lite Preview",
-                    "fr": "Gemini 2.5 Flash Lite Preview"
                 },
                 "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Google_Gemini_icon_2025.svg?_wwcv=1778299695150",
                 "llm_config": "default",
@@ -2926,6 +2302,82 @@
                     }
                 },
                 "deprecation_date": null
+            },
+            {
+                "label": "gemini-omni-1.1-flash",
+                "name": {
+                    "en": "Gemini Omni 1.1 Flash",
+                    "fr": "Gemini Omni 1.1 Flash"
+                },
+                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Google_Gemini_icon_2025.svg?_wwcv=1778299695150",
+                "llm_config": "default",
+                "description": null,
+                "context_window": {
+                    "input": 131072,
+                    "output": 65536
+                },
+                "capabilities": [
+                    "vision",
+                    "audio_input",
+                    "reasoning"
+                ],
+                "categories": [
+                    "chat",
+                    "reasoning"
+                ],
+                "input_formats": [
+                    "text",
+                    "image",
+                    "audio"
+                ],
+                "output_formats": [
+                    "text"
+                ],
+                "pricing": {
+                    "1m_tokens": {
+                        "input": 1.5,
+                        "output": 9
+                    }
+                },
+                "deprecation_date": null
+            },
+            {
+                "label": "nano-banana-pro-preview",
+                "name": {
+                    "en": "Nano Banana Pro Preview",
+                    "fr": "Nano Banana Pro Preview"
+                },
+                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Google_Gemini_icon_2025.svg?_wwcv=1778299695150",
+                "llm_config": "default",
+                "description": null,
+                "context_window": {
+                    "input": 131072,
+                    "output": 32768
+                },
+                "capabilities": [
+                    "vision",
+                    "prompt_caching"
+                ],
+                "categories": [
+                    "image"
+                ],
+                "input_formats": [
+                    "text"
+                ],
+                "output_formats": [
+                    "image"
+                ],
+                "pricing": {
+                    "1m_tokens": {
+                        "input": 2,
+                        "output": 12
+                    },
+                    "per_image": {
+                        "input": 0.0011,
+                        "output": 0.134
+                    }
+                },
+                "deprecation_date": null
             }
         ]
     },
@@ -2941,101 +2393,167 @@
         },
         "models": [
             {
-                "label": "devstral-2512",
+                "label": "mistral-small-2603",
                 "name": {
-                    "en": "Devstral",
-                    "fr": "Devstral"
+                    "en": "Mistral Small",
+                    "fr": "Mistral Small"
                 },
                 "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Mistral_AI_logo_(2025–).svg?_wwcv=1778299695167",
                 "llm_config": "default",
                 "description": null,
                 "context_window": {
-                    "input": 256000,
-                    "output": 256000
+                    "input": 262144,
+                    "output": 262144
                 },
                 "capabilities": [
-                    "function_calling"
-                ],
-                "categories": [
-                    "code"
-                ],
-                "input_formats": [
-                    "text"
-                ],
-                "output_formats": [
-                    "text"
-                ],
-                "pricing": {
-                    "1m_tokens": {
-                        "input": 0.4,
-                        "output": 2
-                    }
-                },
-                "deprecation_date": null
-            },
-            {
-                "label": "labs-devstral-small-2512",
-                "name": {
-                    "en": "Labs Devstral Small",
-                    "fr": "Labs Devstral Small"
-                },
-                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Mistral_AI_logo_(2025–).svg?_wwcv=1778299695167",
-                "llm_config": "default",
-                "description": null,
-                "context_window": {
-                    "input": 256000,
-                    "output": 256000
-                },
-                "capabilities": [
-                    "function_calling"
-                ],
-                "categories": [
-                    "code"
-                ],
-                "input_formats": [
-                    "text"
-                ],
-                "output_formats": [
-                    "text"
-                ],
-                "pricing": {
-                    "1m_tokens": {
-                        "input": 0.1,
-                        "output": 0.3
-                    }
-                },
-                "deprecation_date": null
-            },
-            {
-                "label": "magistral-medium-2509",
-                "name": {
-                    "en": "Magistral Medium",
-                    "fr": "Magistral Medium"
-                },
-                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Mistral_AI_logo_(2025–).svg?_wwcv=1778299695167",
-                "llm_config": "default",
-                "description": null,
-                "context_window": {
-                    "input": 40000,
-                    "output": 40000
-                },
-                "capabilities": [
+                    "vision",
                     "function_calling",
                     "reasoning"
                 ],
                 "categories": [
+                    "chat",
                     "reasoning"
                 ],
                 "input_formats": [
-                    "text"
+                    "text",
+                    "image"
                 ],
                 "output_formats": [
                     "text"
                 ],
                 "pricing": {
                     "1m_tokens": {
-                        "input": 2,
-                        "output": 5
+                        "input": 0.15,
+                        "output": 0.6,
+                        "cache_read": 0.015
+                    }
+                },
+                "deprecation_date": null
+            },
+            {
+                "label": "voxtral-mini-tts-2603",
+                "name": {
+                    "en": "Voxtral Mini TTS",
+                    "fr": "Voxtral Mini TTS"
+                },
+                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Mistral_AI_logo_(2025–).svg?_wwcv=1778299695167",
+                "llm_config": "default",
+                "description": null,
+                "context_window": {
+                    "input": null,
+                    "output": null
+                },
+                "capabilities": [
+                    "audio_output"
+                ],
+                "categories": [
+                    "speech"
+                ],
+                "input_formats": [
+                    "text"
+                ],
+                "output_formats": [
+                    "audio"
+                ],
+                "pricing": {
+                    "per_1m_characters": {
+                        "output": 16
+                    }
+                },
+                "deprecation_date": null
+            },
+            {
+                "label": "voxtral-mini-2602",
+                "name": {
+                    "en": "Voxtral Mini",
+                    "fr": "Voxtral Mini"
+                },
+                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Mistral_AI_logo_(2025–).svg?_wwcv=1778299695167",
+                "llm_config": "default",
+                "description": null,
+                "context_window": {
+                    "input": null,
+                    "output": null
+                },
+                "capabilities": [
+                    "audio_input"
+                ],
+                "categories": [
+                    "transcription"
+                ],
+                "input_formats": [
+                    "audio"
+                ],
+                "output_formats": [
+                    "text"
+                ],
+                "pricing": {
+                    "per_minute": {
+                        "input": 0.003
+                    }
+                },
+                "deprecation_date": null
+            },
+            {
+                "label": "voxtral-mini-realtime-2602",
+                "name": {
+                    "en": "Voxtral Mini Realtime",
+                    "fr": "Voxtral Mini Realtime"
+                },
+                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Mistral_AI_logo_(2025–).svg?_wwcv=1778299695167",
+                "llm_config": "default",
+                "description": null,
+                "context_window": {
+                    "input": null,
+                    "output": null
+                },
+                "capabilities": [
+                    "audio_input"
+                ],
+                "categories": [
+                    "transcription"
+                ],
+                "input_formats": [
+                    "audio"
+                ],
+                "output_formats": [
+                    "text"
+                ],
+                "pricing": {
+                    "per_minute": {
+                        "input": 0.006
+                    }
+                },
+                "deprecation_date": null
+            },
+            {
+                "label": "voxtral-mini-transcribe-realtime-2602",
+                "name": {
+                    "en": "Voxtral Mini Transcribe Realtime",
+                    "fr": "Voxtral Mini Transcribe Realtime"
+                },
+                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Mistral_AI_logo_(2025–).svg?_wwcv=1778299695167",
+                "llm_config": "default",
+                "description": null,
+                "context_window": {
+                    "input": null,
+                    "output": null
+                },
+                "capabilities": [
+                    "audio_input"
+                ],
+                "categories": [
+                    "transcription"
+                ],
+                "input_formats": [
+                    "audio"
+                ],
+                "output_formats": [
+                    "text"
+                ],
+                "pricing": {
+                    "per_minute": {
+                        "input": 0.006
                     }
                 },
                 "deprecation_date": null
@@ -3050,8 +2568,8 @@
                 "llm_config": "default",
                 "description": null,
                 "context_window": {
-                    "input": 256000,
-                    "output": 256000
+                    "input": 128000,
+                    "output": 128000
                 },
                 "capabilities": [
                     "function_calling"
@@ -3068,65 +2586,35 @@
                 "pricing": {
                     "1m_tokens": {
                         "input": 0.3,
-                        "output": 0.9
+                        "output": 0.9,
+                        "cache_read": 0.03
                     }
                 },
                 "deprecation_date": null
             },
             {
-                "label": "devstral-medium-2507",
+                "label": "voxtral-small-2507",
                 "name": {
-                    "en": "Devstral Medium",
-                    "fr": "Devstral Medium"
+                    "en": "Voxtral Small",
+                    "fr": "Voxtral Small"
                 },
                 "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Mistral_AI_logo_(2025–).svg?_wwcv=1778299695167",
                 "llm_config": "default",
                 "description": null,
                 "context_window": {
-                    "input": 128000,
-                    "output": 128000
+                    "input": 32768,
+                    "output": 32768
                 },
                 "capabilities": [
-                    "function_calling"
+                    "function_calling",
+                    "audio_input"
                 ],
                 "categories": [
-                    "code"
+                    "chat"
                 ],
                 "input_formats": [
-                    "text"
-                ],
-                "output_formats": [
-                    "text"
-                ],
-                "pricing": {
-                    "1m_tokens": {
-                        "input": 0.4,
-                        "output": 2
-                    }
-                },
-                "deprecation_date": null
-            },
-            {
-                "label": "devstral-small-2507",
-                "name": {
-                    "en": "Devstral Small",
-                    "fr": "Devstral Small"
-                },
-                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Mistral_AI_logo_(2025–).svg?_wwcv=1778299695167",
-                "llm_config": "default",
-                "description": null,
-                "context_window": {
-                    "input": 128000,
-                    "output": 128000
-                },
-                "capabilities": [
-                    "function_calling"
-                ],
-                "categories": [
-                    "code"
-                ],
-                "input_formats": [
-                    "text"
+                    "text",
+                    "audio"
                 ],
                 "output_formats": [
                     "text"
@@ -3134,144 +2622,10 @@
                 "pricing": {
                     "1m_tokens": {
                         "input": 0.1,
-                        "output": 0.3
-                    }
-                },
-                "deprecation_date": null
-            },
-            {
-                "label": "magistral-small-2506",
-                "name": {
-                    "en": "Magistral Small",
-                    "fr": "Magistral Small"
-                },
-                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Mistral_AI_logo_(2025–).svg?_wwcv=1778299695167",
-                "llm_config": "default",
-                "description": null,
-                "context_window": {
-                    "input": 40000,
-                    "output": 40000
-                },
-                "capabilities": [
-                    "function_calling",
-                    "reasoning"
-                ],
-                "categories": [
-                    "reasoning"
-                ],
-                "input_formats": [
-                    "text"
-                ],
-                "output_formats": [
-                    "text"
-                ],
-                "pricing": {
-                    "1m_tokens": {
-                        "input": 0.5,
-                        "output": 1.5
-                    }
-                },
-                "deprecation_date": null
-            },
-            {
-                "label": "mistral-medium-2505",
-                "name": {
-                    "en": "Mistral Medium",
-                    "fr": "Mistral Medium"
-                },
-                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Mistral_AI_logo_(2025–).svg?_wwcv=1778299695167",
-                "llm_config": "default",
-                "description": null,
-                "context_window": {
-                    "input": 131072,
-                    "output": 8191
-                },
-                "capabilities": [
-                    "function_calling"
-                ],
-                "categories": [
-                    "chat"
-                ],
-                "input_formats": [
-                    "text"
-                ],
-                "output_formats": [
-                    "text"
-                ],
-                "pricing": {
-                    "1m_tokens": {
-                        "input": 0.4,
-                        "output": 2
-                    }
-                },
-                "deprecation_date": null
-            },
-            {
-                "label": "pixtral-large-2411",
-                "name": {
-                    "en": "Pixtral Large",
-                    "fr": "Pixtral Large"
-                },
-                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Mistral_AI_logo_(2025–).svg?_wwcv=1778299695167",
-                "llm_config": "default",
-                "description": null,
-                "context_window": {
-                    "input": 128000,
-                    "output": 128000
-                },
-                "capabilities": [
-                    "vision",
-                    "function_calling"
-                ],
-                "categories": [
-                    "image"
-                ],
-                "input_formats": [
-                    "text",
-                    "image"
-                ],
-                "output_formats": [
-                    "text"
-                ],
-                "pricing": {
-                    "1m_tokens": {
-                        "input": 2,
-                        "output": 6
-                    }
-                },
-                "deprecation_date": null
-            },
-            {
-                "label": "pixtral-12b-2409",
-                "name": {
-                    "en": "Pixtral 12B",
-                    "fr": "Pixtral 12B"
-                },
-                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Mistral_AI_logo_(2025–).svg?_wwcv=1778299695167",
-                "llm_config": "default",
-                "description": null,
-                "context_window": {
-                    "input": 128000,
-                    "output": 128000
-                },
-                "capabilities": [
-                    "vision",
-                    "function_calling"
-                ],
-                "categories": [
-                    "image"
-                ],
-                "input_formats": [
-                    "text",
-                    "image"
-                ],
-                "output_formats": [
-                    "text"
-                ],
-                "pricing": {
-                    "1m_tokens": {
-                        "input": 0.15,
-                        "output": 0.15
+                        "output": 0.4
+                    },
+                    "per_minute": {
+                        "input": 0.004
                     }
                 },
                 "deprecation_date": null
@@ -3306,7 +2660,82 @@
                 "pricing": {
                     "1m_tokens": {
                         "input": 0.15,
-                        "output": 0.15
+                        "output": 0.15,
+                        "cache_read": 0.015
+                    }
+                },
+                "deprecation_date": null
+            },
+            {
+                "label": "glm-5-2",
+                "name": {
+                    "en": "Glm 5.2",
+                    "fr": "Glm 5.2"
+                },
+                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Mistral_AI_logo_(2025–).svg?_wwcv=1778299695167",
+                "llm_config": "default",
+                "description": null,
+                "context_window": {
+                    "input": 1048576,
+                    "output": 131072
+                },
+                "capabilities": [
+                    "function_calling",
+                    "reasoning",
+                    "prompt_caching"
+                ],
+                "categories": [
+                    "chat",
+                    "reasoning"
+                ],
+                "input_formats": [
+                    "text"
+                ],
+                "output_formats": [
+                    "text"
+                ],
+                "pricing": {
+                    "1m_tokens": {
+                        "input": 1.4,
+                        "output": 4.4,
+                        "cache_read": 0.14
+                    }
+                },
+                "deprecation_date": null
+            },
+            {
+                "label": "zai-glm-5-2",
+                "name": {
+                    "en": "Zai Glm 5.2",
+                    "fr": "Zai Glm 5.2"
+                },
+                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Mistral_AI_logo_(2025–).svg?_wwcv=1778299695167",
+                "llm_config": "default",
+                "description": null,
+                "context_window": {
+                    "input": 1048576,
+                    "output": 131072
+                },
+                "capabilities": [
+                    "function_calling",
+                    "reasoning",
+                    "prompt_caching"
+                ],
+                "categories": [
+                    "chat",
+                    "reasoning"
+                ],
+                "input_formats": [
+                    "text"
+                ],
+                "output_formats": [
+                    "text"
+                ],
+                "pricing": {
+                    "1m_tokens": {
+                        "input": 1.4,
+                        "output": 4.4,
+                        "cache_read": 0.14
                     }
                 },
                 "deprecation_date": null
@@ -3341,7 +2770,8 @@
                 "pricing": {
                     "1m_tokens": {
                         "input": 0.2,
-                        "output": 0.2
+                        "output": 0.2,
+                        "cache_read": 0.02
                     }
                 },
                 "deprecation_date": null
@@ -3376,7 +2806,84 @@
                 "pricing": {
                     "1m_tokens": {
                         "input": 0.15,
-                        "output": 0.15
+                        "output": 0.15,
+                        "cache_read": 0.015
+                    }
+                },
+                "deprecation_date": null
+            },
+            {
+                "label": "mistral-medium-3-5",
+                "name": {
+                    "en": "Mistral Medium 3.5",
+                    "fr": "Mistral Medium 3.5"
+                },
+                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Mistral_AI_logo_(2025–).svg?_wwcv=1778299695167",
+                "llm_config": "default",
+                "description": null,
+                "context_window": {
+                    "input": 262144,
+                    "output": 262144
+                },
+                "capabilities": [
+                    "vision",
+                    "function_calling",
+                    "reasoning"
+                ],
+                "categories": [
+                    "chat",
+                    "reasoning"
+                ],
+                "input_formats": [
+                    "text",
+                    "image"
+                ],
+                "output_formats": [
+                    "text"
+                ],
+                "pricing": {
+                    "1m_tokens": {
+                        "input": 1.5,
+                        "output": 7.5,
+                        "cache_read": 0.15
+                    }
+                },
+                "deprecation_date": null
+            },
+            {
+                "label": "mistral-medium-3.5",
+                "name": {
+                    "en": "Mistral Medium 3.5",
+                    "fr": "Mistral Medium 3.5"
+                },
+                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Mistral_AI_logo_(2025–).svg?_wwcv=1778299695167",
+                "llm_config": "default",
+                "description": null,
+                "context_window": {
+                    "input": 262144,
+                    "output": 262144
+                },
+                "capabilities": [
+                    "vision",
+                    "function_calling",
+                    "reasoning"
+                ],
+                "categories": [
+                    "chat",
+                    "reasoning"
+                ],
+                "input_formats": [
+                    "text",
+                    "image"
+                ],
+                "output_formats": [
+                    "text"
+                ],
+                "pricing": {
+                    "1m_tokens": {
+                        "input": 1.5,
+                        "output": 7.5,
+                        "cache_read": 0.15
                     }
                 },
                 "deprecation_date": null
@@ -3411,30 +2918,33 @@
                 "pricing": {
                     "1m_tokens": {
                         "input": 0.1,
-                        "output": 0.1
+                        "output": 0.1,
+                        "cache_read": 0.01
                     }
                 },
                 "deprecation_date": null
             },
             {
-                "label": "mistral-small-3-2-2506",
+                "label": "mistral-medium-3",
                 "name": {
-                    "en": "Mistral Small 3.2",
-                    "fr": "Mistral Small 3.2"
+                    "en": "Mistral Medium 3",
+                    "fr": "Mistral Medium 3"
                 },
                 "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Mistral_AI_logo_(2025–).svg?_wwcv=1778299695167",
                 "llm_config": "default",
                 "description": null,
                 "context_window": {
-                    "input": 131072,
-                    "output": 131072
+                    "input": 262144,
+                    "output": 262144
                 },
                 "capabilities": [
                     "vision",
-                    "function_calling"
+                    "function_calling",
+                    "reasoning"
                 ],
                 "categories": [
-                    "chat"
+                    "chat",
+                    "reasoning"
                 ],
                 "input_formats": [
                     "text",
@@ -3445,43 +2955,8 @@
                 ],
                 "pricing": {
                     "1m_tokens": {
-                        "input": 0.06,
-                        "output": 0.18
-                    }
-                },
-                "deprecation_date": null
-            },
-            {
-                "label": "mistral-medium-3-1-2508",
-                "name": {
-                    "en": "Mistral Medium 3.1",
-                    "fr": "Mistral Medium 3.1"
-                },
-                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Mistral_AI_logo_(2025–).svg?_wwcv=1778299695167",
-                "llm_config": "default",
-                "description": null,
-                "context_window": {
-                    "input": 131072,
-                    "output": 131072
-                },
-                "capabilities": [
-                    "vision",
-                    "function_calling"
-                ],
-                "categories": [
-                    "chat"
-                ],
-                "input_formats": [
-                    "text",
-                    "image"
-                ],
-                "output_formats": [
-                    "text"
-                ],
-                "pricing": {
-                    "1m_tokens": {
-                        "input": 0.4,
-                        "output": 2
+                        "input": 1.5,
+                        "output": 7.5
                     }
                 },
                 "deprecation_date": null
@@ -3516,75 +2991,43 @@
                 "pricing": {
                     "1m_tokens": {
                         "input": 0.5,
-                        "output": 1.5
+                        "output": 1.5,
+                        "cache_read": 0.05
                     }
                 },
                 "deprecation_date": null
             },
             {
-                "label": "magistral-medium-1-2-2509",
+                "label": "ministral-3b-2512",
                 "name": {
-                    "en": "Magistral Medium 1.2",
-                    "fr": "Magistral Medium 1.2"
+                    "en": "Ministral 3B",
+                    "fr": "Ministral 3B"
                 },
                 "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Mistral_AI_logo_(2025–).svg?_wwcv=1778299695167",
                 "llm_config": "default",
                 "description": null,
                 "context_window": {
-                    "input": 40000,
-                    "output": 40000
+                    "input": 131072,
+                    "output": 131072
                 },
                 "capabilities": [
-                    "function_calling",
-                    "reasoning"
+                    "vision",
+                    "function_calling"
                 ],
                 "categories": [
-                    "reasoning"
+                    "chat"
                 ],
                 "input_formats": [
-                    "text"
+                    "text",
+                    "image"
                 ],
                 "output_formats": [
                     "text"
                 ],
                 "pricing": {
                     "1m_tokens": {
-                        "input": 2,
-                        "output": 5
-                    }
-                },
-                "deprecation_date": null
-            },
-            {
-                "label": "magistral-small-1-2-2509",
-                "name": {
-                    "en": "Magistral Small 1.2",
-                    "fr": "Magistral Small 1.2"
-                },
-                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Mistral_AI_logo_(2025–).svg?_wwcv=1778299695167",
-                "llm_config": "default",
-                "description": null,
-                "context_window": {
-                    "input": 40000,
-                    "output": 40000
-                },
-                "capabilities": [
-                    "function_calling",
-                    "reasoning"
-                ],
-                "categories": [
-                    "reasoning"
-                ],
-                "input_formats": [
-                    "text"
-                ],
-                "output_formats": [
-                    "text"
-                ],
-                "pricing": {
-                    "1m_tokens": {
-                        "input": 0.5,
-                        "output": 1.5
+                        "input": 0.1,
+                        "output": 0.1
                     }
                 },
                 "deprecation_date": null
