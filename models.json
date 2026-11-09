@@ -95,6 +95,48 @@
                 "deprecation_date": null
             },
             {
+                "label": "gpt-6-cyber",
+                "name": {
+                    "en": "GPT 6 Cyber",
+                    "fr": "GPT 6 Cyber"
+                },
+                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/openai-svgrepo-com.svg?_wwcv=1778299695154",
+                "llm_config": "default",
+                "description": null,
+                "context_window": {
+                    "input": 922000,
+                    "output": 128000
+                },
+                "capabilities": [
+                    "vision",
+                    "function_calling",
+                    "pdf_input",
+                    "reasoning",
+                    "prompt_caching"
+                ],
+                "categories": [
+                    "chat",
+                    "reasoning"
+                ],
+                "input_formats": [
+                    "text",
+                    "image",
+                    "pdf"
+                ],
+                "output_formats": [
+                    "text"
+                ],
+                "pricing": {
+                    "1m_tokens": {
+                        "input": 20,
+                        "output": 100,
+                        "cache_write": 25,
+                        "cache_read": 2
+                    }
+                },
+                "deprecation_date": null
+            },
+            {
                 "label": "gpt-6-rosalind",
                 "name": {
                     "en": "GPT 6 Rosalind",
@@ -313,7 +355,7 @@
                 "llm_config": "default",
                 "description": null,
                 "context_window": {
-                    "input": 400000,
+                    "input": 272000,
                     "output": 128000
                 },
                 "capabilities": [
@@ -549,41 +591,6 @@
                 "deprecation_date": null
             },
             {
-                "label": "gpt-5.5-cyber-preview",
-                "name": {
-                    "en": "GPT 5.5 Cyber Preview",
-                    "fr": "GPT 5.5 Cyber Preview"
-                },
-                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/openai-svgrepo-com.svg?_wwcv=1778299695154",
-                "llm_config": "default",
-                "description": null,
-                "context_window": {
-                    "input": null,
-                    "output": null
-                },
-                "capabilities": [
-                    "reasoning"
-                ],
-                "categories": [
-                    "chat",
-                    "reasoning"
-                ],
-                "input_formats": [
-                    "text"
-                ],
-                "output_formats": [
-                    "text"
-                ],
-                "pricing": {
-                    "1m_tokens": {
-                        "input": 12.5,
-                        "output": 75,
-                        "cache_read": 1.25
-                    }
-                },
-                "deprecation_date": null
-            },
-            {
                 "label": "gpt-5.5",
                 "name": {
                     "en": "GPT 5.5",
@@ -748,159 +755,63 @@
                 "deprecation_date": null
             },
             {
-                "label": "gpt-4.1",
+                "label": "gpt-image-2.6-flare",
                 "name": {
-                    "en": "GPT 4.1",
-                    "fr": "GPT 4.1"
+                    "en": "GPT Image 2.6 Flare",
+                    "fr": "GPT Image 2.6 Flare"
                 },
                 "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/openai-svgrepo-com.svg?_wwcv=1778299695154",
                 "llm_config": "default",
                 "description": null,
                 "context_window": {
-                    "input": 1047576,
-                    "output": 32768
+                    "input": null,
+                    "output": null
                 },
                 "capabilities": [
                     "vision",
-                    "function_calling",
-                    "pdf_input",
-                    "prompt_caching"
+                    "pdf_input"
                 ],
                 "categories": [
-                    "chat"
+                    "image"
                 ],
                 "input_formats": [
                     "text",
-                    "image",
-                    "pdf"
+                    "image"
                 ],
                 "output_formats": [
-                    "text"
+                    "image"
                 ],
-                "pricing": {
-                    "1m_tokens": {
-                        "input": 2,
-                        "output": 8,
-                        "cache_read": 0.5
-                    }
-                },
+                "pricing": null,
                 "deprecation_date": null
             },
             {
-                "label": "gpt-4.1-mini",
+                "label": "gpt-image-2.6-sunburst",
                 "name": {
-                    "en": "GPT 4.1 Mini",
-                    "fr": "GPT 4.1 Mini"
+                    "en": "GPT Image 2.6 Sunburst",
+                    "fr": "GPT Image 2.6 Sunburst"
                 },
                 "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/openai-svgrepo-com.svg?_wwcv=1778299695154",
                 "llm_config": "default",
                 "description": null,
                 "context_window": {
-                    "input": 1047576,
-                    "output": 32768
+                    "input": null,
+                    "output": null
                 },
                 "capabilities": [
                     "vision",
-                    "function_calling",
-                    "pdf_input",
-                    "prompt_caching"
+                    "pdf_input"
                 ],
                 "categories": [
-                    "chat"
+                    "image"
                 ],
                 "input_formats": [
                     "text",
-                    "image",
-                    "pdf"
+                    "image"
                 ],
                 "output_formats": [
-                    "text"
+                    "image"
                 ],
-                "pricing": {
-                    "1m_tokens": {
-                        "input": 0.4,
-                        "output": 1.6,
-                        "cache_read": 0.1
-                    }
-                },
-                "deprecation_date": null
-            },
-            {
-                "label": "gpt-4o",
-                "name": {
-                    "en": "GPT 4o",
-                    "fr": "GPT 4o"
-                },
-                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/openai-svgrepo-com.svg?_wwcv=1778299695154",
-                "llm_config": "default",
-                "description": null,
-                "context_window": {
-                    "input": 128000,
-                    "output": 16384
-                },
-                "capabilities": [
-                    "vision",
-                    "function_calling",
-                    "pdf_input",
-                    "prompt_caching"
-                ],
-                "categories": [
-                    "chat"
-                ],
-                "input_formats": [
-                    "text",
-                    "image",
-                    "pdf"
-                ],
-                "output_formats": [
-                    "text"
-                ],
-                "pricing": {
-                    "1m_tokens": {
-                        "input": 2.5,
-                        "output": 10,
-                        "cache_read": 1.25
-                    }
-                },
-                "deprecation_date": null
-            },
-            {
-                "label": "gpt-4o-mini",
-                "name": {
-                    "en": "GPT 4o Mini",
-                    "fr": "GPT 4o Mini"
-                },
-                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/openai-svgrepo-com.svg?_wwcv=1778299695154",
-                "llm_config": "default",
-                "description": null,
-                "context_window": {
-                    "input": 128000,
-                    "output": 16384
-                },
-                "capabilities": [
-                    "vision",
-                    "function_calling",
-                    "pdf_input",
-                    "prompt_caching"
-                ],
-                "categories": [
-                    "chat"
-                ],
-                "input_formats": [
-                    "text",
-                    "image",
-                    "pdf"
-                ],
-                "output_formats": [
-                    "text"
-                ],
-                "pricing": {
-                    "1m_tokens": {
-                        "input": 0.15,
-                        "output": 0.6,
-                        "cache_read": 0.075
-                    }
-                },
+                "pricing": null,
                 "deprecation_date": null
             },
             {
@@ -979,9 +890,12 @@
                 "capabilities": [
                     "function_calling",
                     "audio_input",
-                    "audio_output"
+                    "audio_output",
+                    "reasoning",
+                    "prompt_caching"
                 ],
                 "categories": [
+                    "reasoning",
                     "realtime"
                 ],
                 "input_formats": [
@@ -1017,9 +931,12 @@
                 "capabilities": [
                     "function_calling",
                     "audio_input",
-                    "audio_output"
+                    "audio_output",
+                    "reasoning",
+                    "prompt_caching"
                 ],
                 "categories": [
+                    "reasoning",
                     "realtime"
                 ],
                 "input_formats": [
@@ -2521,92 +2438,6 @@
                 "deprecation_date": null
             },
             {
-                "label": "gemini-2.5-pro",
-                "name": {
-                    "en": "Gemini 2.5 Pro",
-                    "fr": "Gemini 2.5 Pro"
-                },
-                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Google_Gemini_icon_2025.svg?_wwcv=1778299695150",
-                "llm_config": "default",
-                "description": null,
-                "context_window": {
-                    "input": 1048576,
-                    "output": 65536
-                },
-                "capabilities": [
-                    "vision",
-                    "function_calling",
-                    "audio_input",
-                    "pdf_input",
-                    "reasoning",
-                    "prompt_caching"
-                ],
-                "categories": [
-                    "chat",
-                    "reasoning"
-                ],
-                "input_formats": [
-                    "text",
-                    "image",
-                    "audio",
-                    "pdf"
-                ],
-                "output_formats": [
-                    "text"
-                ],
-                "pricing": {
-                    "1m_tokens": {
-                        "input": 1.25,
-                        "output": 10,
-                        "cache_read": 0.125
-                    }
-                },
-                "deprecation_date": null
-            },
-            {
-                "label": "gemini-2.5-flash",
-                "name": {
-                    "en": "Gemini 2.5 Flash",
-                    "fr": "Gemini 2.5 Flash"
-                },
-                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Google_Gemini_icon_2025.svg?_wwcv=1778299695150",
-                "llm_config": "default",
-                "description": null,
-                "context_window": {
-                    "input": 1048576,
-                    "output": 65536
-                },
-                "capabilities": [
-                    "vision",
-                    "function_calling",
-                    "audio_input",
-                    "pdf_input",
-                    "reasoning",
-                    "prompt_caching"
-                ],
-                "categories": [
-                    "chat",
-                    "reasoning"
-                ],
-                "input_formats": [
-                    "text",
-                    "image",
-                    "audio",
-                    "pdf"
-                ],
-                "output_formats": [
-                    "text"
-                ],
-                "pricing": {
-                    "1m_tokens": {
-                        "input": 0.3,
-                        "output": 2.5,
-                        "cache_read": 0.03
-                    }
-                },
-                "deprecation_date": null
-            },
-            {
                 "label": "gemini-2.5-flash-native-audio-preview-09-2025",
                 "name": {
                     "en": "Gemini 2.5 Flash Native Audio Preview",
@@ -2764,21 +2595,21 @@
                 "deprecation_date": null
             },
             {
-                "label": "gemini-omni-1.1-flash",
+                "label": "gemini-omni-1.2-flash",
                 "name": {
-                    "en": "Gemini Omni 1.1 Flash",
-                    "fr": "Gemini Omni 1.1 Flash"
+                    "en": "Gemini Omni 1.2 Flash",
+                    "fr": "Gemini Omni 1.2 Flash"
                 },
                 "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Google_Gemini_icon_2025.svg?_wwcv=1778299695150",
                 "llm_config": "default",
                 "description": null,
                 "context_window": {
-                    "input": 1048576,
+                    "input": 131072,
                     "output": 65536
                 },
                 "capabilities": [
                     "vision",
-                    "audio_input",
+                    "audio_output",
                     "reasoning"
                 ],
                 "categories": [
@@ -2787,11 +2618,11 @@
                 ],
                 "input_formats": [
                     "text",
-                    "image",
-                    "audio"
+                    "image"
                 ],
                 "output_formats": [
-                    "text"
+                    "text",
+                    "audio"
                 ],
                 "pricing": {
                     "1m_tokens": {
@@ -2886,38 +2717,6 @@
                         "input": 0.15,
                         "output": 0.6,
                         "cache_read": 0.015
-                    }
-                },
-                "deprecation_date": null
-            },
-            {
-                "label": "voxtral-mini-2602",
-                "name": {
-                    "en": "Voxtral Mini",
-                    "fr": "Voxtral Mini"
-                },
-                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Mistral_AI_logo_(2025–).svg?_wwcv=1778299695167",
-                "llm_config": "default",
-                "description": null,
-                "context_window": {
-                    "input": null,
-                    "output": null
-                },
-                "capabilities": [
-                    "audio_input"
-                ],
-                "categories": [
-                    "transcription"
-                ],
-                "input_formats": [
-                    "audio"
-                ],
-                "output_formats": [
-                    "text"
-                ],
-                "pricing": {
-                    "per_minute": {
-                        "input": 0.003
                     }
                 },
                 "deprecation_date": null
@@ -3242,9 +3041,9 @@
                 ],
                 "pricing": {
                     "1m_tokens": {
-                        "input": 1.36,
-                        "output": 4.18,
-                        "cache_read": 0.14
+                        "input": 0.7,
+                        "output": 2.1,
+                        "cache_read": 0.07
                     }
                 },
                 "deprecation_date": null
@@ -3281,9 +3080,9 @@
                 ],
                 "pricing": {
                     "1m_tokens": {
-                        "input": 1.36,
-                        "output": 4.18,
-                        "cache_read": 0.14
+                        "input": 0.7,
+                        "output": 2.1,
+                        "cache_read": 0.07
                     }
                 },
                 "deprecation_date": null
@@ -3356,44 +3155,6 @@
                         "input": 0.15,
                         "output": 0.15,
                         "cache_read": 0.015
-                    }
-                },
-                "deprecation_date": null
-            },
-            {
-                "label": "mistral-medium-3-5",
-                "name": {
-                    "en": "Mistral Medium 3.5",
-                    "fr": "Mistral Medium 3.5"
-                },
-                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Mistral_AI_logo_(2025–).svg?_wwcv=1778299695167",
-                "llm_config": "default",
-                "description": null,
-                "context_window": {
-                    "input": 262144,
-                    "output": 262144
-                },
-                "capabilities": [
-                    "vision",
-                    "function_calling",
-                    "reasoning"
-                ],
-                "categories": [
-                    "chat",
-                    "reasoning"
-                ],
-                "input_formats": [
-                    "text",
-                    "image"
-                ],
-                "output_formats": [
-                    "text"
-                ],
-                "pricing": {
-                    "1m_tokens": {
-                        "input": 1.5,
-                        "output": 7.5,
-                        "cache_read": 0.15
                     }
                 },
                 "deprecation_date": null
