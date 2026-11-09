@@ -130,6 +130,16 @@ function applyDocPageFilter(
         if (findInPage(m.label, page).found) kept.push(m);
         else dropped.push(m.label);
     }
+    // A page that names none of the provider's chat models is not a real filter: the docs moved
+    // or changed shape (e.g. the Anthropic docs moving to platform.claude.com wiped every Claude
+    // model on 2026-08-31). Fall back to no page filter, as when the page fails to download.
+    const chatCandidates = candidates.filter((m) => m.mode === "chat").length;
+    if (chatCandidates > 0 && dropped.length === chatCandidates) {
+        console.warn(
+            `  ⚠ ${providerId}: doc page names none of its ${chatCandidates} chat models, falling back to no page filter`,
+        );
+        return { kept: candidates, dropped: [] };
+    }
     return { kept, dropped };
 }
 
