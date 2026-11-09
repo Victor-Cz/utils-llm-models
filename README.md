@@ -55,7 +55,7 @@ const catalog = await res.json();
 - **Cron** : tous les lundis 06:00 UTC
 - **CLI** : `gh workflow run sync.yml`
 
-À chaque run, le workflow ouvre une PR `chore/sync-llm-models` avec les changements (nouveaux modèles, pricing à jour, descriptions ajoutées).
+À chaque run, le workflow ouvre une PR `chore/sync-llm-models` avec les changements (nouveaux modèles, pricing à jour, descriptions ajoutées), demande la relecture de `Victor-Cz` (notification), puis la **merge tout seul** si le catalogue est cohérent ([`scripts/check.ts`](./scripts/check.ts)). S'il ne l'est pas (un fournisseur sans modèle, ou qui en perd plus de la moitié d'un coup), la PR reste ouverte et le run échoue, ce qui notifie aussi.
 
 ## Setup initial
 

@@ -23,12 +23,25 @@ jobs:
 
             - run: npm ci
 
+            # The catalog before this sync, for the sanity check below
+            - name: Keep previous catalog
+              run: cp models.json "$RUNNER_TEMP/previous-models.json"
+
             - name: Run sync
               env:
                   ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
               run: npm run sync
 
+            # A provider with no models left, or that lost more than half of them, is not merged:
+            # the PR stays open and the run fails, which notifies (cf. scripts/check.ts). Run on
+            # the fresh models.json, before the PR step resets the working tree
+            - name: Check catalog
+              id: check
+              continue-on-error: true
+              run: npx tsx scripts/check.ts "$RUNNER_TEMP/previous-models.json"
+
             - name: Open PR with changes
+              id: pr
               uses: peter-evans/create-pull-request@v7
               with:
                   commit-message: "chore: sync LLM models catalog"
@@ -44,6 +57,23 @@ jobs:
                       See the workflow run summary for details.
                   branch: chore/sync-llm-models
                   delete-branch: true
+                  # Notifies on every sync, even when the PR merges on its own below
+                  reviewers: Victor-Cz
                   add-paths: |
                       models.json
                       enrichment.json
+
+            - name: Merge PR
+              if: >-
+                  steps.check.outcome == 'success' &&
+                  (steps.pr.outputs.pull-request-operation == 'created' ||
+                  steps.pr.outputs.pull-request-operation == 'updated')
+              env:
+                  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              run: gh pr merge ${{ steps.pr.outputs.pull-request-number }} --merge --delete-branch
+
+            - name: Fail if the catalog looks wrong
+              if: steps.check.outcome == 'failure'
+              run: |
+                  echo "::error::The synced catalog looks wrong, the PR was left open: see the Check catalog step"
+                  exit 1
