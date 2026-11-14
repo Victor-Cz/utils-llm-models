@@ -19,7 +19,7 @@
     },
     "models": {},
     "order": {
-        "providers": ["openai", "anthropic", "google", "mistral"]
+        "providers": ["openai", "anthropic", "google", "mistral", "replicate", "recraft"]
     },
     "filters": {
         "filter_by_doc_page": true,
@@ -44,6 +44,25 @@
             "-latest$",
             "-computer-use(-|$)",
             "^deep-research-"
-        ]
+        ],
+        "provider_patterns": {
+            "replicate": {
+                "include": [
+                    "^black-forest-labs/flux-",
+                    "^kwaivgi/kling-",
+                    "^bytedance/seedance-",
+                    "^(wan-video|alibaba|wavespeedai)/wan-?\\d",
+                    "^minimax/(hailuo|video|h\\d)"
+                ],
+                "exclude": [
+                    "-(lora|finetuned)(-|$)",
+                    "/flux-(canny|depth|fill)-",
+                    "-image(-|$)"
+                ]
+            },
+            "recraft": {
+                "include": ["^recraftv\\d+$"]
+            }
+        }
     }
 }

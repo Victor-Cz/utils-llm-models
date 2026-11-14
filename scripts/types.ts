@@ -1,4 +1,4 @@
-export type ProviderId = "anthropic" | "openai" | "google" | "mistral";
+export type ProviderId = "anthropic" | "openai" | "google" | "mistral" | "replicate" | "recraft";
 
 export type Localized = {
     en: string;
@@ -20,6 +20,17 @@ export type ModelPricing = {
     };
     /** Per generated image (for image_generation models). */
     per_image?: { input?: number; output?: number };
+    /**
+     * Image tokens per 1M tokens, like `1m_tokens` (image models billed by the token, e.g. gpt-image-2.x).
+     * `input` = image tokens sent (edits, references), `output` = image tokens generated.
+     */
+    image_tokens?: { input?: number; output?: number };
+    /**
+     * Per second of generated video (video_generation models). `output` is the default price;
+     * `by_resolution` holds the price per resolution when the provider bills them differently
+     * (keys as LiteLLM names them: "480p", "720p", "768p", "1080p", "2k", "4k").
+     */
+    per_second?: { output?: number; by_resolution?: Record<string, number> };
     /** Per minute of audio (for audio_transcription / realtime). */
     per_minute?: { input?: number; output?: number };
     /** Per 1M characters (for audio_speech / TTS models). */
@@ -41,6 +52,7 @@ export type ModelCategory =
     | "code"
     | "reasoning"
     | "image"          // image-first: Pixtral (vision-input), DALL-E / Imagen / gpt-image-1 (generation)
+    | "video"          // video generation (Veo, Wan, Kling, Seedance…)
     | "transcription"  // audio → text (Whisper, gpt-4o-transcribe)
     | "speech"         // text → audio (TTS, gpt-4o-mini-tts, gemini-tts)
     | "realtime";      // bidirectional voice (gpt-realtime, gpt-audio, gemini-live)
@@ -105,6 +117,19 @@ export type EnrichmentFilters = {
      * Skipped silently for providers whose docs are not server-rendered (OpenAI).
      */
     filter_by_doc_page?: boolean;
+    /**
+     * Per-provider regex patterns matched against the LiteLLM id without its provider prefix
+     * (e.g. `black-forest-labs/flux-1.1-pro` for `replicate/black-forest-labs/flux-1.1-pro`).
+     * For providers with no usable doc page (Replicate, Recraft), they replace the page filter.
+     */
+    provider_patterns?: Partial<Record<ProviderId, ProviderPatterns>>;
+};
+
+export type ProviderPatterns = {
+    /** If set, only ids matching at least one of these are kept. */
+    include?: string[];
+    /** Ids matching any of these are dropped (applied after `include`). */
+    exclude?: string[];
 };
 
 export type EnrichmentOrder = {

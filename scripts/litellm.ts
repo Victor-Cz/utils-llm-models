@@ -4,10 +4,11 @@ import type { ModelCapability, ModelPricing, ProviderId } from "./types.js";
 const LITELLM_URL =
     "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json";
 
-/** LiteLLM modes we keep in our catalog. Everything else (embedding, moderation, ocr, video_generation, responses) is dropped. */
+/** LiteLLM modes we keep in our catalog. Everything else (embedding, moderation, ocr, responses) is dropped. */
 export const KEPT_MODES = new Set([
     "chat",
     "image_generation",
+    "video_generation",
     "audio_transcription",
     "audio_speech",
     "realtime",
@@ -16,6 +17,7 @@ export const KEPT_MODES = new Set([
 export type LiteLLMMode =
     | "chat"
     | "image_generation"
+    | "video_generation"
     | "audio_transcription"
     | "audio_speech"
     | "realtime";
@@ -34,6 +36,10 @@ type LiteLLMEntry = {
     output_cost_per_image?: number;
     input_cost_per_second?: number;
     output_cost_per_second?: number;
+    /** Older spelling of the per-second video price (Sora). */
+    output_cost_per_video_per_second?: number;
+    input_cost_per_image_token?: number;
+    output_cost_per_image_token?: number;
     input_cost_per_character?: number;
     output_cost_per_character?: number;
     supports_vision?: boolean;
@@ -48,6 +54,8 @@ type LiteLLMEntry = {
 
 export type NormalizedLiteLLMModel = {
     label: string;
+    /** LiteLLM id without its provider prefix (`black-forest-labs/flux-1.1-pro`), for provider patterns. */
+    source_id: string;
     provider: ProviderId;
     mode: LiteLLMMode;
     context_window: { input: number | null; output: number | null };
@@ -86,7 +94,35 @@ function extractCapabilities(entry: LiteLLMEntry): ModelCapability[] {
 
 const round = (n: number) => Math.round(n * 1_000_000) / 1_000_000;
 
-function extractPricing(entry: LiteLLMEntry): ModelPricing | null {
+/** `output_cost_per_second_<resolution>` keys, e.g. `_720p`, `_1080p`, `_2k`, `_4k`. */
+const PER_SECOND_RESOLUTION = /^output_cost_per_second_(.+)$/;
+
+/** Vertical pixels of a resolution key, to list them from lowest to highest. */
+function resolutionRank(res: string): number {
+    const p = res.match(/^(\d+)p$/i);
+    if (p) return parseInt(p[1], 10);
+    const k = res.match(/^(\d+)k$/i);
+    if (k) return parseInt(k[1], 10) * 540; // 2k → 1080 (+), 4k → 2160
+    return Infinity;
+}
+
+function extractPerSecond(entry: LiteLLMEntry): ModelPricing["per_second"] | undefined {
+    const byResolution: Record<string, number> = {};
+    const tiers = Object.entries(entry)
+        .map(([key, value]) => [key.match(PER_SECOND_RESOLUTION)?.[1], value] as const)
+        .filter((t): t is readonly [string, number] => t[0] !== undefined && typeof t[1] === "number")
+        .sort((a, b) => resolutionRank(a[0]) - resolutionRank(b[0]) || a[0].localeCompare(b[0]));
+    for (const [res, value] of tiers) byResolution[res] = round(value);
+
+    const output = entry.output_cost_per_second ?? entry.output_cost_per_video_per_second;
+    if (output == null && tiers.length === 0) return undefined;
+    const perSecond: NonNullable<ModelPricing["per_second"]> = {};
+    if (output != null) perSecond.output = round(output);
+    if (tiers.length > 0) perSecond.by_resolution = byResolution;
+    return perSecond;
+}
+
+function extractPricing(entry: LiteLLMEntry, mode: LiteLLMMode): ModelPricing | null {
     const pricing: ModelPricing = {};
 
     if (entry.input_cost_per_token != null && entry.output_cost_per_token != null) {
@@ -108,7 +144,26 @@ function extractPricing(entry: LiteLLMEntry): ModelPricing | null {
         if (entry.output_cost_per_image != null) pricing.per_image.output = round(entry.output_cost_per_image);
     }
 
-    if (entry.input_cost_per_second != null || entry.output_cost_per_second != null) {
+    // Image models billed by the token (gpt-image-2.x). On chat/realtime models these keys are the
+    // price of vision input, already part of what `1m_tokens` describes: not an image price.
+    if (
+        mode === "image_generation" &&
+        (entry.input_cost_per_image_token != null || entry.output_cost_per_image_token != null)
+    ) {
+        pricing.image_tokens = {};
+        if (entry.input_cost_per_image_token != null) {
+            pricing.image_tokens.input = round(entry.input_cost_per_image_token * 1_000_000);
+        }
+        if (entry.output_cost_per_image_token != null) {
+            pricing.image_tokens.output = round(entry.output_cost_per_image_token * 1_000_000);
+        }
+    }
+
+    if (mode === "video_generation") {
+        // Video is billed per second of output; `per_minute` stays an audio price.
+        const perSecond = extractPerSecond(entry);
+        if (perSecond) pricing.per_second = perSecond;
+    } else if (entry.input_cost_per_second != null || entry.output_cost_per_second != null) {
         pricing.per_minute = {};
         if (entry.input_cost_per_second != null) pricing.per_minute.input = round(entry.input_cost_per_second * 60);
         if (entry.output_cost_per_second != null) pricing.per_minute.output = round(entry.output_cost_per_second * 60);
@@ -151,6 +206,7 @@ export async function fetchLiteLLMCatalog(): Promise<NormalizedLiteLLMModel[]> {
 
         seen.set(dedupKey, {
             label,
+            source_id: label,
             provider: providerId,
             mode: entry.mode as LiteLLMMode,
             context_window: {
@@ -158,7 +214,7 @@ export async function fetchLiteLLMCatalog(): Promise<NormalizedLiteLLMModel[]> {
                 output: entry.max_output_tokens ?? entry.max_tokens ?? null,
             },
             capabilities: extractCapabilities(entry),
-            pricing: extractPricing(entry),
+            pricing: extractPricing(entry, entry.mode as LiteLLMMode),
             deprecation_date: entry.deprecation_date ?? null,
         });
     }

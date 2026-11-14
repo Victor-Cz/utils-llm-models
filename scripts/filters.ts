@@ -1,4 +1,4 @@
-import type { EnrichmentFilters } from "./types.js";
+import type { EnrichmentFilters, ProviderPatterns } from "./types.js";
 
 const DATED_SUFFIX_PATTERNS: RegExp[] = [
     /-\d{3,}$/,             // -001, -002, -1106, -2402, -20240307
@@ -41,6 +41,28 @@ export function shouldExclude(label: string, filters: EnrichmentFilters | undefi
         }
     }
     return false;
+}
+
+function anyMatch(patterns: string[], value: string): boolean {
+    return patterns.some((pattern) => {
+        try {
+            return new RegExp(pattern).test(value);
+        } catch {
+            console.warn(`  ⚠ Invalid regex in filters.provider_patterns: ${pattern}`);
+            return false;
+        }
+    });
+}
+
+/**
+ * Per-provider include/exclude patterns, matched against the LiteLLM id without its provider
+ * prefix (`black-forest-labs/flux-1.1-pro`). No patterns for the provider → kept.
+ */
+export function matchesProviderPatterns(sourceId: string, patterns: ProviderPatterns | undefined): boolean {
+    if (!patterns) return true;
+    if (patterns.include && !anyMatch(patterns.include, sourceId)) return false;
+    if (patterns.exclude && anyMatch(patterns.exclude, sourceId)) return false;
+    return true;
 }
 
 /**

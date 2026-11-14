@@ -6,6 +6,7 @@ const ORDERED: ModelCategory[] = [
     "code",
     "reasoning",
     "image",
+    "video",
     "transcription",
     "speech",
     "realtime",
@@ -16,7 +17,9 @@ const ORDERED: ModelCategory[] = [
  * see `input_formats` / `output_formats`.
  *
  * Detection rules:
- *  - LiteLLM `mode` is the strongest signal (image_generation → image, audio_transcription → transcription, etc.)
+ *  - LiteLLM `mode` is the strongest signal (image_generation → image, video_generation → video,
+ *    audio_transcription → transcription, etc.). Image models are those priced per image or per image
+ *    token, video models those priced per second of video: both come from these modes.
  *  - For chat-mode entries, label patterns identify specialization (codestral/devstral → code, pixtral → image,
  *    magistral / o-series → reasoning, *-realtime/-live/-audio → realtime)
  *  - `supports_reasoning` capability adds `reasoning` even on chat models (e.g., Claude with extended thinking)
@@ -30,6 +33,7 @@ export function deriveCategories(
     const cats = new Set<ModelCategory>();
 
     if (mode === "image_generation") cats.add("image");
+    else if (mode === "video_generation") cats.add("video");
     else if (mode === "audio_transcription") cats.add("transcription");
     else if (mode === "audio_speech") cats.add("speech");
     else if (mode === "realtime") cats.add("realtime");
