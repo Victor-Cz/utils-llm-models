@@ -3,7 +3,7 @@
     "version": "0.0.0",
     "private": true,
     "type": "module",
-    "description": "Catalogue auto-synchronisé des modèles LLM (Anthropic, OpenAI, Google, Mistral) avec pricing, capabilities et descriptions.",
+    "description": "Catalogue auto-synchronisé des modèles LLM, image et vidéo (Anthropic, OpenAI, Google, Mistral, Replicate, Recraft) avec pricing, capabilities et descriptions.",
     "scripts": {
         "sync": "tsx scripts/sync.ts",
         "type-check": "tsc --noEmit"

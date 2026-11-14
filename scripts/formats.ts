@@ -27,8 +27,13 @@ export function deriveFormats(
     if (mode === "image_generation") {
         input.add("text");
         // Image-edit / image-input variants: gpt-image-* and dall-e-2 accept image input for edits/variations
-        if (/^gpt-image|^dall-e-2/.test(label)) input.add("image");
+        if (/^gpt-image|^dall-e-2|^flux-(kontext|redux)-/.test(label)) input.add("image");
         output.add("image");
+    } else if (mode === "video_generation") {
+        input.add("text");
+        // Image-to-video / reference-to-video variants (wan-2.5-i2v, wan-2.7-r2v, kling…) take an image
+        if (/(^|-)(i2v|r2v)(-|$)|^kling-v|^seedance-|^veo-/.test(label)) input.add("image");
+        output.add("video");
     } else if (mode === "audio_transcription") {
         input.add("audio");
         output.add("text");

@@ -10,7 +10,7 @@ import {
     PAGE_FILTERABLE,
     type PageCache,
 } from "./doc-pages.js";
-import { shouldExclude, smartDedupDated } from "./filters.js";
+import { matchesProviderPatterns, shouldExclude, smartDedupDated } from "./filters.js";
 import { fetchLiteLLMCatalog, type NormalizedLiteLLMModel } from "./litellm.js";
 import { PROVIDERS, PROVIDER_IDS } from "./providers.js";
 import { compareByVersionThenPrice } from "./sort.js";
@@ -81,6 +81,30 @@ function previousModelByLabel(previous: Catalog | null, providerId: ProviderId):
     if (!providerEntry) return map;
     for (const m of providerEntry.models) map.set(m.label, m);
     return map;
+}
+
+/**
+ * For providers with `short_labels` (Replicate: `<owner>/<model>`), the label becomes the last
+ * segment of the id. When that short label is already taken (another model of the catalog, any
+ * provider), the full id is kept instead, so labels stay unique and stable.
+ */
+function shortenLabels(models: NormalizedLiteLLMModel[]): NormalizedLiteLLMModel[] {
+    const shortLabel = (m: NormalizedLiteLLMModel) =>
+        PROVIDERS[m.provider].short_labels ? (m.source_id.split("/").pop() ?? m.source_id) : m.label;
+    const uses = new Map<string, number>();
+    for (const m of models) {
+        const label = shortLabel(m);
+        uses.set(label, (uses.get(label) ?? 0) + 1);
+    }
+    return models.map((m) => {
+        if (!PROVIDERS[m.provider].short_labels) return m;
+        const label = shortLabel(m);
+        if ((uses.get(label) ?? 0) > 1) {
+            console.warn(`  ⚠ ${m.provider}: label "${label}" is taken, keeping "${m.source_id}"`);
+            return m;
+        }
+        return { ...m, label };
+    });
 }
 
 function buildModel(
@@ -174,14 +198,18 @@ function sortModels(models: Model[], explicitOrder: string[] | undefined): Model
 async function main() {
     console.log("→ Fetching LiteLLM catalog…");
     const rawNormalized = await fetchLiteLLMCatalog();
-    console.log(`  ${rawNormalized.length} chat models matched across our 4 providers`);
+    console.log(`  ${rawNormalized.length} models matched across our ${PROVIDER_IDS.length} providers`);
 
     const enrichment = await readJson<Enrichment>(ENRICHMENT_PATH, {
         providers: {},
         models: {},
     });
 
-    const afterRegex = rawNormalized.filter((m) => !shouldExclude(m.label, enrichment.filters));
+    const afterRegex = rawNormalized.filter(
+        (m) =>
+            !shouldExclude(m.label, enrichment.filters) &&
+            matchesProviderPatterns(m.source_id, enrichment.filters?.provider_patterns?.[m.provider]),
+    );
     const regexFilteredOut = rawNormalized.length - afterRegex.length;
     if (regexFilteredOut > 0) {
         console.log(
@@ -190,8 +218,10 @@ async function main() {
     }
 
     const dedupEnabled = enrichment.filters?.exclude_dated === true;
-    const afterDedup = PROVIDER_IDS.flatMap((p) =>
-        smartDedupDated(afterRegex.filter((m) => m.provider === p), dedupEnabled),
+    const afterDedup = shortenLabels(
+        PROVIDER_IDS.flatMap((p) =>
+            smartDedupDated(afterRegex.filter((m) => m.provider === p), dedupEnabled),
+        ),
     );
     const dedupedOut = afterRegex.length - afterDedup.length;
     if (dedupEnabled && dedupedOut > 0) {
@@ -209,7 +239,7 @@ async function main() {
         console.log(`  pages fetched: ${pageProvidersList}`);
         for (const p of PROVIDER_IDS) {
             if (!PAGE_FILTERABLE.has(p)) {
-                console.log(`  ↪ ${p}: skipping page filter (docs not server-rendered)`);
+                console.log(`  ↪ ${p}: skipping page filter (no scrapable doc page)`);
             } else if (!pages[p]) {
                 console.warn(`  ⚠ ${p}: doc page fetch failed, falling back to no page filter`);
             }
@@ -249,7 +279,11 @@ async function main() {
         }
 
         let descriptions: Record<string, Localized> = {};
-        if (labelsNeedingDescription.length > 0 && anthropicClient) {
+        if (
+            labelsNeedingDescription.length > 0 &&
+            anthropicClient &&
+            !PROVIDERS[providerId].skip_descriptions
+        ) {
             console.log(
                 `→ Extracting descriptions for ${labelsNeedingDescription.length} new ${providerId} model(s)…`,
             );

@@ -1,14 +1,28 @@
 # utils-llm-models
 
-Catalogue auto-synchronisé des modèles LLM (Anthropic, OpenAI, Google, Mistral) destiné à être consommé par plusieurs projets via une URL raw GitHub.
+Catalogue auto-synchronisé des modèles LLM et de génération d'image et de vidéo (Anthropic, OpenAI, Google, Mistral, Replicate, Recraft) destiné à être consommé par plusieurs projets via une URL raw GitHub.
 
 ## Sources
 
 | Donnée | Source |
 |---|---|
 | IDs, context window, capabilities, pricing | [LiteLLM `model_prices_and_context_window.json`](https://github.com/BerriAI/litellm/blob/main/model_prices_and_context_window.json) |
-| Descriptions (EN + FR) | Page de doc officielle du provider, extraction par Claude |
+| Sélection des modèles | Page de doc officielle (Anthropic, Google, Mistral), motifs de [`enrichment.json`](./enrichment.json) (Replicate, Recraft) |
+| Descriptions (EN + FR) | Page de doc officielle du provider, extraction par Claude (pas pour Replicate et Recraft, sans page de doc commune) |
 | Logo, `llm_config`, overrides custom | [`enrichment.json`](./enrichment.json) (édité à la main) |
+
+### Fournisseurs
+
+| `provider` | `litellm_provider` | Clés LiteLLM | `label` |
+|---|---|---|---|
+| `openai` | `openai` | `gpt-image-2.5-flare`… | la clé |
+| `anthropic` | `anthropic` | `claude-…` | la clé |
+| `google` | `gemini` | `gemini/veo-3.1-generate-001`… | sans le préfixe `gemini/` |
+| `mistral` | `mistral` | `mistral-…` | la clé |
+| `replicate` | `replicate` | `replicate/<owner>/<model>` | le dernier segment (`flux-1.1-pro`, `wan-3`) ; l'id `<owner>/<model>` complet s'il est déjà pris |
+| `recraft` | `recraft` | `recraft/<model>` | sans le préfixe `recraft/` (`recraftv3`) |
+
+Côté Replicate, seuls Flux en image (`black-forest-labs/flux-*`, hors variantes lora, finetuned, canny, depth et fill) et la vidéo Kling, Seedance, Wan et Hailuo (MiniMax `h3*`) sont gardés.
 
 Aucune clé API providers n'est nécessaire pour la découverte des modèles. Une `ANTHROPIC_API_KEY` est utilisée uniquement pour générer les descriptions des nouveaux modèles (l'étape est skip si la clé est absente).
 
@@ -37,6 +51,35 @@ Aucune clé API providers n'est nécessaire pour la découverte des modèles. Un
   }
 ]
 ```
+
+### `pricing`
+
+Toutes les clés sont optionnelles, en dollars ; un modèle sans prix connu a `pricing: null`.
+
+| Clé | Unité | Champs | Source LiteLLM |
+|---|---|---|---|
+| `1m_tokens` | par million de tokens texte | `input`, `output`, `cache_write?`, `cache_read?` | `input_cost_per_token`, `output_cost_per_token`, `cache_*` |
+| `per_image` | par image | `input?`, `output?` | `input_cost_per_image`, `output_cost_per_image` |
+| `image_tokens` | par million de tokens image (comme `1m_tokens`) | `input?`, `output?` | `input_cost_per_image_token`, `output_cost_per_image_token` (modèles d'image seulement) |
+| `per_second` | par seconde de vidéo générée | `output?`, `by_resolution?` | `output_cost_per_second`, `output_cost_per_second_<résolution>` (modèles vidéo seulement) |
+| `per_minute` | par minute d'audio | `input?`, `output?` | `input_cost_per_second`, `output_cost_per_second` × 60 (hors vidéo) |
+| `per_1m_characters` | par million de caractères | `input?`, `output?` | `input_cost_per_character`, `output_cost_per_character` |
+
+```json
+{ "label": "flux-1.1-pro", "categories": ["image"], "pricing": { "per_image": { "output": 0.04 } } }
+{ "label": "gpt-image-2.5-flare", "categories": ["image"], "pricing": { "image_tokens": { "input": 8, "output": 30 } } }
+{
+  "label": "wan-3",
+  "categories": ["video"],
+  "pricing": { "per_second": { "output": 0.14, "by_resolution": { "480p": 0.035, "720p": 0.07, "1080p": 0.14 } } }
+}
+```
+
+`per_second.output` est le prix par défaut donné par LiteLLM ; `by_resolution` liste les prix par résolution quand le fournisseur les distingue (clés telles que LiteLLM les nomme : `480p`, `720p`, `768p`, `1080p`, `2k`, `4k`), de la plus basse à la plus haute.
+
+### `categories`
+
+`chat`, `code`, `reasoning`, `image` (modèles d'image : prix `per_image` ou `image_tokens`), `video` (modèles vidéo : prix `per_second`), `transcription`, `speech`, `realtime`.
 
 ## Usage depuis un autre projet
 
@@ -95,7 +138,8 @@ LiteLLM expose **toutes** les variantes (snapshots datés, fine-tuning, modèles
 1. **Modèles avec `deprecation_date`** — toujours droppés (qu'ils soient déjà dépréciés ou planifiés pour l'être). Pas configurable.
 2. **`exclude_dated: true`** — drop les snapshots datés (`claude-opus-4-5-20251101`, `mistral-large-2407`, `gpt-4o-2024-05-13`, `gemini-2.0-flash-001`…). On garde uniquement l'alias canonique.
 3. **`exclude_patterns: string[]`** — regex ; tout `label` qui match est exclu. Utile pour dégager les vieux modèles (`gpt-3.5-*`), les modèles open-source non hébergés (`open-mistral-*`), les modes spécialisés (`-audio-*`, `-realtime-*`), les familles séparées (`gemma-*`, `learnlm-*`, `lyria-*`)…
-4. **`filter_by_doc_page: true`** — pour Anthropic, Google, Mistral, on fetch la page de doc officielle et on garde seulement les modèles dont le `label` y apparaît (matching multi-stratégies : exact, sans `-latest`, dot↔dash). C'est ce filtre qui dégage les `gemini-flash-lite-latest` / `gemini-pro-latest` que LiteLLM expose mais que Google ne documente pas. **Skippé silencieusement pour OpenAI** dont la doc est rendue côté JS et bloque le scraping.
+4. **`provider_patterns`** — par fournisseur, `include` (garde seulement ce qui matche) et `exclude` (regex), appliqués à l'id LiteLLM sans son préfixe fournisseur (`black-forest-labs/flux-1.1-pro`). Remplace le filtre par page de doc pour Replicate et Recraft, qui n'en ont pas.
+5. **`filter_by_doc_page: true`** — pour Anthropic, Google, Mistral, on fetch la page de doc officielle et on garde seulement les modèles dont le `label` y apparaît (matching multi-stratégies : exact, sans `-latest`, dot↔dash). C'est ce filtre qui dégage les `gemini-flash-lite-latest` / `gemini-pro-latest` que LiteLLM expose mais que Google ne documente pas. **Skippé silencieusement pour OpenAI** dont la doc est rendue côté JS et bloque le scraping, ainsi que pour Replicate et Recraft. La page ne couvre que les modèles de chat : image, vidéo, audio passent sans ce filtre.
 
 ### `order` — ordre d'affichage
 
