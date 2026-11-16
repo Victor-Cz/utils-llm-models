@@ -1,4 +1,12 @@
-export type ProviderId = "anthropic" | "openai" | "google" | "mistral" | "replicate" | "recraft";
+export type ProviderId =
+    | "anthropic"
+    | "openai"
+    | "google"
+    | "mistral"
+    | "replicate"
+    | "recraft"
+    | "elevenlabs"
+    | "deepgram";
 
 export type Localized = {
     en: string;
@@ -35,6 +43,11 @@ export type ModelPricing = {
     per_minute?: { input?: number; output?: number };
     /** Per 1M characters (for audio_speech / TTS models). */
     per_1m_characters?: { input?: number; output?: number };
+    /**
+     * Per generated song / track, whatever its length (music models billed per request, e.g. Lyria).
+     * LiteLLM stores it as `output_cost_per_image` on these models.
+     */
+    per_song?: { output?: number };
 };
 
 export type ModelCapability =
@@ -53,6 +66,7 @@ export type ModelCategory =
     | "reasoning"
     | "image"          // image-first: Pixtral (vision-input), DALL-E / Imagen / gpt-image-1 (generation)
     | "video"          // video generation (Veo, Wan, Kling, Seedance…)
+    | "audio"          // music / sound generation, not speech (Lyria)
     | "transcription"  // audio → text (Whisper, gpt-4o-transcribe)
     | "speech"         // text → audio (TTS, gpt-4o-mini-tts, gemini-tts)
     | "realtime";      // bidirectional voice (gpt-realtime, gpt-audio, gemini-live)

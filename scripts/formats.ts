@@ -34,6 +34,10 @@ export function deriveFormats(
         // Image-to-video / reference-to-video variants (wan-2.5-i2v, wan-2.7-r2v, kling…) take an image
         if (/(^|-)(i2v|r2v)(-|$)|^kling-v|^seedance-|^veo-/.test(label)) input.add("image");
         output.add("video");
+    } else if (mode === "audio_generation") {
+        // Music (Lyria): a text prompt in, an audio track out
+        input.add("text");
+        output.add("audio");
     } else if (mode === "audio_transcription") {
         input.add("audio");
         output.add("text");
