@@ -1,14 +1,14 @@
 # utils-llm-models
 
-Catalogue auto-synchronisé des modèles LLM et de génération d'image et de vidéo (Anthropic, OpenAI, Google, Mistral, Replicate, Recraft) destiné à être consommé par plusieurs projets via une URL raw GitHub.
+Catalogue auto-synchronisé des modèles LLM et de génération d'image, de vidéo et de son (Anthropic, OpenAI, Google, Mistral, Replicate, Recraft, ElevenLabs, Deepgram) destiné à être consommé par plusieurs projets via une URL raw GitHub.
 
 ## Sources
 
 | Donnée | Source |
 |---|---|
 | IDs, context window, capabilities, pricing | [LiteLLM `model_prices_and_context_window.json`](https://github.com/BerriAI/litellm/blob/main/model_prices_and_context_window.json) |
-| Sélection des modèles | Page de doc officielle (Anthropic, Google, Mistral), motifs de [`enrichment.json`](./enrichment.json) (Replicate, Recraft) |
-| Descriptions (EN + FR) | Page de doc officielle du provider, extraction par Claude (pas pour Replicate et Recraft, sans page de doc commune) |
+| Sélection des modèles | Page de doc officielle (Anthropic, Google, Mistral), motifs de [`enrichment.json`](./enrichment.json) (Replicate, Recraft, ElevenLabs, Deepgram) |
+| Descriptions (EN + FR) | Page de doc officielle du provider, extraction par Claude (pas pour Replicate, Recraft, ElevenLabs et Deepgram, dont les descriptions viennent seulement d'`enrichment.json`) |
 | Logo, `llm_config`, overrides custom | [`enrichment.json`](./enrichment.json) (édité à la main) |
 
 ### Fournisseurs
@@ -21,8 +21,12 @@ Catalogue auto-synchronisé des modèles LLM et de génération d'image et de vi
 | `mistral` | `mistral` | `mistral-…` | la clé |
 | `replicate` | `replicate` | `replicate/<owner>/<model>` | le dernier segment (`flux-1.1-pro`, `wan-3`) ; l'id `<owner>/<model>` complet s'il est déjà pris |
 | `recraft` | `recraft` | `recraft/<model>` | sans le préfixe `recraft/` (`recraftv3`) |
+| `elevenlabs` | `elevenlabs` | `elevenlabs/<model>` | sans le préfixe `elevenlabs/` (`eleven_multilingual_v2`) |
+| `deepgram` | `deepgram` | `deepgram/<model>` | sans le préfixe `deepgram/` (`nova-3`) |
 
 Côté Replicate, seuls Flux en image (`black-forest-labs/flux-*`, hors variantes lora, finetuned, canny, depth et fill) et la vidéo Kling, Seedance, Wan et Hailuo (MiniMax `h3*`) sont gardés.
+
+Côté son, seuls les modèles utilisés sont gardés : la synthèse vocale ElevenLabs `eleven_multilingual_v2`, `eleven_flash_v2_5` et `eleven_v3`, la transcription Deepgram `nova-3` (pré-enregistré, pas `streaming/nova-3`), et la musique Google `lyria-3-clip-preview` et `lyria-3.5` (les autres `lyria-*` restent exclus).
 
 Aucune clé API providers n'est nécessaire pour la découverte des modèles. Une `ANTHROPIC_API_KEY` est utilisée uniquement pour générer les descriptions des nouveaux modèles (l'étape est skip si la clé est absente).
 
@@ -64,6 +68,7 @@ Toutes les clés sont optionnelles, en dollars ; un modèle sans prix connu a `p
 | `per_second` | par seconde de vidéo générée | `output?`, `by_resolution?` | `output_cost_per_second`, `output_cost_per_second_<résolution>` (modèles vidéo seulement) |
 | `per_minute` | par minute d'audio | `input?`, `output?` | `input_cost_per_second`, `output_cost_per_second` × 60 (hors vidéo) |
 | `per_1m_characters` | par million de caractères | `input?`, `output?` | `input_cost_per_character`, `output_cost_per_character` |
+| `per_song` | par morceau généré, quelle que soit sa durée | `output?` | `output_cost_per_image` (modèles de musique seulement : LiteLLM y range le prix d'un morceau Lyria) |
 
 ```json
 { "label": "flux-1.1-pro", "categories": ["image"], "pricing": { "per_image": { "output": 0.04 } } }
@@ -73,13 +78,18 @@ Toutes les clés sont optionnelles, en dollars ; un modèle sans prix connu a `p
   "categories": ["video"],
   "pricing": { "per_second": { "output": 0.14, "by_resolution": { "480p": 0.035, "720p": 0.07, "1080p": 0.14 } } }
 }
+{ "label": "eleven_multilingual_v2", "categories": ["speech"], "pricing": { "per_1m_characters": { "input": 80 } } }
+{ "label": "nova-3", "categories": ["transcription"], "pricing": { "per_minute": { "input": 0.0043, "output": 0 } } }
+{ "label": "lyria-3-clip-preview", "categories": ["audio"], "pricing": { "per_song": { "output": 0.04 } } }
 ```
 
 `per_second.output` est le prix par défaut donné par LiteLLM ; `by_resolution` liste les prix par résolution quand le fournisseur les distingue (clés telles que LiteLLM les nomme : `480p`, `720p`, `768p`, `1080p`, `2k`, `4k`), de la plus basse à la plus haute.
 
 ### `categories`
 
-`chat`, `code`, `reasoning`, `image` (modèles d'image : prix `per_image` ou `image_tokens`), `video` (modèles vidéo : prix `per_second`), `transcription`, `speech`, `realtime`.
+`chat`, `code`, `reasoning`, `image` (modèles d'image : prix `per_image` ou `image_tokens`), `video` (modèles vidéo : prix `per_second`), `audio` (musique et sons, hors voix : prix `per_song`), `transcription`, `speech` (synthèse vocale), `realtime`.
+
+LiteLLM range les modèles de musique Gemini (Lyria) en `mode: "chat"`, avec des prix au token à zéro et le prix d'un morceau dans `output_cost_per_image`. Le pipeline les reconnaît (entrée `chat` dont la seule sortie est l'audio et qui a un prix à l'unité) et les traite comme un mode à part, `audio_generation` : catégorie `audio`, texte en entrée, audio en sortie, prix `per_song`, sans le `1m_tokens` à zéro, et sans le filtre par page de doc, réservé aux modèles de chat.
 
 ## Usage depuis un autre projet
 
@@ -137,9 +147,9 @@ LiteLLM expose **toutes** les variantes (snapshots datés, fine-tuning, modèles
 
 1. **Modèles avec `deprecation_date`** — toujours droppés (qu'ils soient déjà dépréciés ou planifiés pour l'être). Pas configurable.
 2. **`exclude_dated: true`** — drop les snapshots datés (`claude-opus-4-5-20251101`, `mistral-large-2407`, `gpt-4o-2024-05-13`, `gemini-2.0-flash-001`…). On garde uniquement l'alias canonique.
-3. **`exclude_patterns: string[]`** — regex ; tout `label` qui match est exclu. Utile pour dégager les vieux modèles (`gpt-3.5-*`), les modèles open-source non hébergés (`open-mistral-*`), les modes spécialisés (`-audio-*`, `-realtime-*`), les familles séparées (`gemma-*`, `learnlm-*`, `lyria-*`)…
-4. **`provider_patterns`** — par fournisseur, `include` (garde seulement ce qui matche) et `exclude` (regex), appliqués à l'id LiteLLM sans son préfixe fournisseur (`black-forest-labs/flux-1.1-pro`). Remplace le filtre par page de doc pour Replicate et Recraft, qui n'en ont pas.
-5. **`filter_by_doc_page: true`** — pour Anthropic, Google, Mistral, on fetch la page de doc officielle et on garde seulement les modèles dont le `label` y apparaît (matching multi-stratégies : exact, sans `-latest`, dot↔dash). C'est ce filtre qui dégage les `gemini-flash-lite-latest` / `gemini-pro-latest` que LiteLLM expose mais que Google ne documente pas. **Skippé silencieusement pour OpenAI** dont la doc est rendue côté JS et bloque le scraping, ainsi que pour Replicate et Recraft. La page ne couvre que les modèles de chat : image, vidéo, audio passent sans ce filtre.
+3. **`exclude_patterns: string[]`** — regex ; tout `label` qui match est exclu. Utile pour dégager les vieux modèles (`gpt-3.5-*`), les modèles open-source non hébergés (`open-mistral-*`), les modes spécialisés (`-audio-*`, `-realtime-*`), les familles séparées (`gemma-*`, `learnlm-*`, `lyria-*` sauf `lyria-3-clip-preview` et `lyria-3.5`)…
+4. **`provider_patterns`** — par fournisseur, `include` (garde seulement ce qui matche) et `exclude` (regex), appliqués à l'id LiteLLM sans son préfixe fournisseur (`black-forest-labs/flux-1.1-pro`). Remplace le filtre par page de doc pour Replicate, Recraft, ElevenLabs et Deepgram, qui n'en ont pas.
+5. **`filter_by_doc_page: true`** — pour Anthropic, Google, Mistral, on fetch la page de doc officielle et on garde seulement les modèles dont le `label` y apparaît (matching multi-stratégies : exact, sans `-latest`, dot↔dash). C'est ce filtre qui dégage les `gemini-flash-lite-latest` / `gemini-pro-latest` que LiteLLM expose mais que Google ne documente pas. **Skippé silencieusement pour OpenAI** dont la doc est rendue côté JS et bloque le scraping, ainsi que pour Replicate, Recraft, ElevenLabs et Deepgram. La page ne couvre que les modèles de chat : image, vidéo, audio, musique passent sans ce filtre.
 
 ### `order` — ordre d'affichage
 

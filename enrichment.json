@@ -17,9 +17,19 @@
             "default_model_logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Mistral_AI_logo_(2025–).svg?_wwcv=1778299695167"
         }
     },
-    "models": {},
+    "models": {
+        "eleven_flash_v2_5": {
+            "name": { "en": "Eleven Flash v2.5", "fr": "Eleven Flash v2.5" }
+        },
+        "nova-3": {
+            "name": { "en": "Nova-3", "fr": "Nova-3" }
+        }
+    },
     "order": {
-        "providers": ["openai", "anthropic", "google", "mistral", "replicate", "recraft"]
+        "providers": ["openai", "anthropic", "google", "mistral", "replicate", "recraft", "elevenlabs", "deepgram"],
+        "models": {
+            "elevenlabs": ["eleven_multilingual_v2", "eleven_flash_v2_5", "eleven_v3"]
+        }
     },
     "filters": {
         "filter_by_doc_page": true,
@@ -36,7 +46,7 @@
             "^gemini-gemma-",
             "^gemma-",
             "^learnlm-",
-            "^lyria-",
+            "^lyria-(?!3-clip-preview$|3\\.5$)",
             "^gemini-robotics-",
             "-search-",
             "-customtools$",
@@ -62,6 +72,12 @@
             },
             "recraft": {
                 "include": ["^recraftv\\d+$"]
+            },
+            "elevenlabs": {
+                "include": ["^eleven_(multilingual_v2|flash_v2_5|v3)$"]
+            },
+            "deepgram": {
+                "include": ["^nova-3$"]
             }
         }
     }

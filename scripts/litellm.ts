@@ -20,7 +20,9 @@ export type LiteLLMMode =
     | "video_generation"
     | "audio_transcription"
     | "audio_speech"
-    | "realtime";
+    | "realtime"
+    /** Ours, not LiteLLM's: music models it files as `chat` (Lyria), see `resolveMode`. */
+    | "audio_generation";
 
 type LiteLLMEntry = {
     litellm_provider?: string;
@@ -49,6 +51,7 @@ type LiteLLMEntry = {
     supports_pdf_input?: boolean;
     supports_reasoning?: boolean;
     supports_prompt_caching?: boolean;
+    supported_output_modalities?: string[];
     deprecation_date?: string;
 };
 
@@ -92,6 +95,25 @@ function extractCapabilities(entry: LiteLLMEntry): ModelCapability[] {
     return caps;
 }
 
+/**
+ * LiteLLM files Gemini's music models (Lyria) as `chat`, with zero token prices and the price of a
+ * song in `output_cost_per_image`. A chat entry that only outputs audio and is priced per unit is
+ * a music model: `audio_generation`. (Gemini TTS chat entries also output only audio, but are
+ * priced per token, not per unit.)
+ */
+function resolveMode(entry: LiteLLMEntry): LiteLLMMode {
+    const outputs = entry.supported_output_modalities;
+    if (
+        entry.mode === "chat" &&
+        outputs?.length === 1 &&
+        outputs[0] === "audio" &&
+        entry.output_cost_per_image != null
+    ) {
+        return "audio_generation";
+    }
+    return entry.mode as LiteLLMMode;
+}
+
 const round = (n: number) => Math.round(n * 1_000_000) / 1_000_000;
 
 /** `output_cost_per_second_<resolution>` keys, e.g. `_720p`, `_1080p`, `_2k`, `_4k`. */
@@ -124,6 +146,18 @@ function extractPerSecond(entry: LiteLLMEntry): ModelPricing["per_second"] | und
 
 function extractPricing(entry: LiteLLMEntry, mode: LiteLLMMode): ModelPricing | null {
     const pricing: ModelPricing = {};
+
+    // Music models: priced per song; their token prices are LiteLLM placeholders at zero.
+    if (mode === "audio_generation") {
+        if (entry.output_cost_per_image != null) pricing.per_song = { output: round(entry.output_cost_per_image) };
+        if (entry.input_cost_per_token || entry.output_cost_per_token) {
+            pricing["1m_tokens"] = {
+                input: round((entry.input_cost_per_token ?? 0) * 1_000_000),
+                output: round((entry.output_cost_per_token ?? 0) * 1_000_000),
+            };
+        }
+        return Object.keys(pricing).length > 0 ? pricing : null;
+    }
 
     if (entry.input_cost_per_token != null && entry.output_cost_per_token != null) {
         pricing["1m_tokens"] = {
@@ -204,17 +238,18 @@ export async function fetchLiteLLMCatalog(): Promise<NormalizedLiteLLMModel[]> {
         const dedupKey = `${providerId}:${label}`;
         if (seen.has(dedupKey)) continue;
 
+        const mode = resolveMode(entry);
         seen.set(dedupKey, {
             label,
             source_id: label,
             provider: providerId,
-            mode: entry.mode as LiteLLMMode,
+            mode,
             context_window: {
                 input: entry.max_input_tokens ?? null,
                 output: entry.max_output_tokens ?? entry.max_tokens ?? null,
             },
             capabilities: extractCapabilities(entry),
-            pricing: extractPricing(entry, entry.mode as LiteLLMMode),
+            pricing: extractPricing(entry, mode),
             deprecation_date: entry.deprecation_date ?? null,
         });
     }

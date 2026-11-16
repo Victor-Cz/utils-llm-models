@@ -2244,6 +2244,38 @@
                 "deprecation_date": null
             },
             {
+                "label": "lyria-3.5",
+                "name": {
+                    "en": "Lyria 3.5",
+                    "fr": "Lyria 3.5"
+                },
+                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Google_Gemini_icon_2025.svg?_wwcv=1778299695150",
+                "llm_config": "default",
+                "description": null,
+                "context_window": {
+                    "input": 131072,
+                    "output": 65536
+                },
+                "capabilities": [
+                    "audio_output"
+                ],
+                "categories": [
+                    "audio"
+                ],
+                "input_formats": [
+                    "text"
+                ],
+                "output_formats": [
+                    "audio"
+                ],
+                "pricing": {
+                    "per_song": {
+                        "output": 0.08
+                    }
+                },
+                "deprecation_date": null
+            },
+            {
                 "label": "gemini-3.1-pro-preview",
                 "name": {
                     "en": "Gemini 3.1 Pro Preview",
@@ -2621,6 +2653,38 @@
                 ],
                 "pricing": {
                     "per_image": {
+                        "output": 0.04
+                    }
+                },
+                "deprecation_date": null
+            },
+            {
+                "label": "lyria-3-clip-preview",
+                "name": {
+                    "en": "Lyria 3 Clip Preview",
+                    "fr": "Lyria 3 Clip Preview"
+                },
+                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Google_Gemini_icon_2025.svg?_wwcv=1778299695150",
+                "llm_config": "default",
+                "description": null,
+                "context_window": {
+                    "input": 131072,
+                    "output": 8192
+                },
+                "capabilities": [
+                    "audio_output"
+                ],
+                "categories": [
+                    "audio"
+                ],
+                "input_formats": [
+                    "text"
+                ],
+                "output_formats": [
+                    "audio"
+                ],
+                "pricing": {
+                    "per_song": {
                         "output": 0.04
                     }
                 },
@@ -5231,6 +5295,153 @@
                 "pricing": {
                     "per_image": {
                         "output": 0.022
+                    }
+                },
+                "deprecation_date": null
+            }
+        ]
+    },
+    {
+        "provider": "elevenlabs",
+        "provider_infos": {
+            "name": {
+                "en": "ElevenLabs",
+                "fr": "ElevenLabs"
+            },
+            "logo": "",
+            "model_docs": "https://elevenlabs.io/docs/overview/models"
+        },
+        "models": [
+            {
+                "label": "eleven_multilingual_v2",
+                "name": {
+                    "en": "Eleven Multilingual v2",
+                    "fr": "Eleven Multilingual v2"
+                },
+                "logo": "",
+                "llm_config": "default",
+                "description": null,
+                "context_window": {
+                    "input": null,
+                    "output": null
+                },
+                "capabilities": [],
+                "categories": [
+                    "speech"
+                ],
+                "input_formats": [
+                    "text"
+                ],
+                "output_formats": [
+                    "audio"
+                ],
+                "pricing": {
+                    "per_1m_characters": {
+                        "input": 80
+                    }
+                },
+                "deprecation_date": null
+            },
+            {
+                "label": "eleven_flash_v2_5",
+                "name": {
+                    "en": "Eleven Flash v2.5",
+                    "fr": "Eleven Flash v2.5"
+                },
+                "logo": "",
+                "llm_config": "default",
+                "description": null,
+                "context_window": {
+                    "input": null,
+                    "output": null
+                },
+                "capabilities": [],
+                "categories": [
+                    "speech"
+                ],
+                "input_formats": [
+                    "text"
+                ],
+                "output_formats": [
+                    "audio"
+                ],
+                "pricing": {
+                    "per_1m_characters": {
+                        "input": 40
+                    }
+                },
+                "deprecation_date": null
+            },
+            {
+                "label": "eleven_v3",
+                "name": {
+                    "en": "Eleven v3",
+                    "fr": "Eleven v3"
+                },
+                "logo": "",
+                "llm_config": "default",
+                "description": null,
+                "context_window": {
+                    "input": null,
+                    "output": null
+                },
+                "capabilities": [],
+                "categories": [
+                    "speech"
+                ],
+                "input_formats": [
+                    "text"
+                ],
+                "output_formats": [
+                    "audio"
+                ],
+                "pricing": {
+                    "per_1m_characters": {
+                        "input": 80
+                    }
+                },
+                "deprecation_date": null
+            }
+        ]
+    },
+    {
+        "provider": "deepgram",
+        "provider_infos": {
+            "name": {
+                "en": "Deepgram",
+                "fr": "Deepgram"
+            },
+            "logo": "",
+            "model_docs": "https://developers.deepgram.com/docs/models-languages-overview"
+        },
+        "models": [
+            {
+                "label": "nova-3",
+                "name": {
+                    "en": "Nova-3",
+                    "fr": "Nova-3"
+                },
+                "logo": "",
+                "llm_config": "default",
+                "description": null,
+                "context_window": {
+                    "input": null,
+                    "output": null
+                },
+                "capabilities": [],
+                "categories": [
+                    "transcription"
+                ],
+                "input_formats": [
+                    "audio"
+                ],
+                "output_formats": [
+                    "text"
+                ],
+                "pricing": {
+                    "per_minute": {
+                        "input": 0.0043,
+                        "output": 0
                     }
                 },
                 "deprecation_date": null

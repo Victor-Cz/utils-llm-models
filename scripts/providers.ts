@@ -58,6 +58,20 @@ export const PROVIDERS: Record<ProviderId, ProviderConfig> = {
         litellm_provider: "recraft",
         skip_descriptions: true,
     },
+    elevenlabs: {
+        name: { en: "ElevenLabs", fr: "ElevenLabs" },
+        logo: "",
+        model_docs: "https://elevenlabs.io/docs/overview/models",
+        litellm_provider: "elevenlabs",
+        skip_descriptions: true,
+    },
+    deepgram: {
+        name: { en: "Deepgram", fr: "Deepgram" },
+        logo: "",
+        model_docs: "https://developers.deepgram.com/docs/models-languages-overview",
+        litellm_provider: "deepgram",
+        skip_descriptions: true,
+    },
 };
 
 export const PROVIDER_IDS = Object.keys(PROVIDERS) as ProviderId[];
