@@ -61,7 +61,7 @@ export const PROVIDERS: Record<ProviderId, ProviderConfig> = {
     elevenlabs: {
         name: { en: "ElevenLabs", fr: "ElevenLabs" },
         logo: "",
-        model_docs: "https://elevenlabs.io/docs/models",
+        model_docs: "https://elevenlabs.io/docs/overview/models",
         litellm_provider: "elevenlabs",
         skip_descriptions: true,
     },
