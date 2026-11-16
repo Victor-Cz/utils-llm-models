@@ -15,20 +15,47 @@
         "mistral": {
             "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Mistral_AI_logo_(2025–).svg?_wwcv=1778299695167",
             "default_model_logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Mistral_AI_logo_(2025–).svg?_wwcv=1778299695167"
+        },
+        "elevenlabs": {
+            "logo": "https://cdn.simpleicons.org/elevenlabs",
+            "default_model_logo": "https://cdn.simpleicons.org/elevenlabs"
+        },
+        "deepgram": {
+            "logo": "https://cdn.simpleicons.org/deepgram",
+            "default_model_logo": "https://cdn.simpleicons.org/deepgram"
         }
     },
     "models": {
         "eleven_flash_v2_5": {
-            "name": { "en": "Eleven Flash v2.5", "fr": "Eleven Flash v2.5" }
+            "name": {
+                "en": "Eleven Flash v2.5",
+                "fr": "Eleven Flash v2.5"
+            }
         },
         "nova-3": {
-            "name": { "en": "Nova-3", "fr": "Nova-3" }
+            "name": {
+                "en": "Nova-3",
+                "fr": "Nova-3"
+            }
         }
     },
     "order": {
-        "providers": ["openai", "anthropic", "google", "mistral", "replicate", "recraft", "elevenlabs", "deepgram"],
+        "providers": [
+            "openai",
+            "anthropic",
+            "google",
+            "mistral",
+            "replicate",
+            "recraft",
+            "elevenlabs",
+            "deepgram"
+        ],
         "models": {
-            "elevenlabs": ["eleven_multilingual_v2", "eleven_flash_v2_5", "eleven_v3"]
+            "elevenlabs": [
+                "eleven_multilingual_v2",
+                "eleven_flash_v2_5",
+                "eleven_v3"
+            ]
         }
     },
     "filters": {
@@ -71,13 +98,19 @@
                 ]
             },
             "recraft": {
-                "include": ["^recraftv\\d+$"]
+                "include": [
+                    "^recraftv\\d+$"
+                ]
             },
             "elevenlabs": {
-                "include": ["^eleven_(multilingual_v2|flash_v2_5|v3)$"]
+                "include": [
+                    "^eleven_(multilingual_v2|flash_v2_5|v3)$"
+                ]
             },
             "deepgram": {
-                "include": ["^nova-3$"]
+                "include": [
+                    "^nova-3$"
+                ]
             }
         }
     }
