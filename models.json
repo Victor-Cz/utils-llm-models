@@ -5308,7 +5308,7 @@
                 "en": "ElevenLabs",
                 "fr": "ElevenLabs"
             },
-            "logo": "",
+            "logo": "https://cdn.simpleicons.org/elevenlabs",
             "model_docs": "https://elevenlabs.io/docs/overview/models"
         },
         "models": [
@@ -5318,7 +5318,7 @@
                     "en": "Eleven Multilingual v2",
                     "fr": "Eleven Multilingual v2"
                 },
-                "logo": "",
+                "logo": "https://cdn.simpleicons.org/elevenlabs",
                 "llm_config": "default",
                 "description": null,
                 "context_window": {
@@ -5348,7 +5348,7 @@
                     "en": "Eleven Flash v2.5",
                     "fr": "Eleven Flash v2.5"
                 },
-                "logo": "",
+                "logo": "https://cdn.simpleicons.org/elevenlabs",
                 "llm_config": "default",
                 "description": null,
                 "context_window": {
@@ -5378,7 +5378,7 @@
                     "en": "Eleven v3",
                     "fr": "Eleven v3"
                 },
-                "logo": "",
+                "logo": "https://cdn.simpleicons.org/elevenlabs",
                 "llm_config": "default",
                 "description": null,
                 "context_window": {
@@ -5411,7 +5411,7 @@
                 "en": "Deepgram",
                 "fr": "Deepgram"
             },
-            "logo": "",
+            "logo": "https://cdn.simpleicons.org/deepgram",
             "model_docs": "https://developers.deepgram.com/docs/models-languages-overview"
         },
         "models": [
@@ -5421,7 +5421,7 @@
                     "en": "Nova-3",
                     "fr": "Nova-3"
                 },
-                "logo": "",
+                "logo": "https://cdn.simpleicons.org/deepgram",
                 "llm_config": "default",
                 "description": null,
                 "context_window": {
