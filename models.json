@@ -11,6 +11,132 @@
         },
         "models": [
             {
+                "label": "gpt-6.2-astra",
+                "name": {
+                    "en": "GPT 6.2 Astra",
+                    "fr": "GPT 6.2 Astra"
+                },
+                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/openai-svgrepo-com.svg?_wwcv=1778299695154",
+                "llm_config": "default",
+                "description": null,
+                "context_window": {
+                    "input": 922000,
+                    "output": 128000
+                },
+                "capabilities": [
+                    "vision",
+                    "function_calling",
+                    "pdf_input",
+                    "reasoning",
+                    "prompt_caching"
+                ],
+                "categories": [
+                    "chat",
+                    "reasoning"
+                ],
+                "input_formats": [
+                    "text",
+                    "image",
+                    "pdf"
+                ],
+                "output_formats": [
+                    "text"
+                ],
+                "pricing": {
+                    "1m_tokens": {
+                        "input": 8,
+                        "output": 40,
+                        "cache_write": 10,
+                        "cache_read": 0.4
+                    }
+                },
+                "deprecation_date": null
+            },
+            {
+                "label": "gpt-6.2-astra-law",
+                "name": {
+                    "en": "GPT 6.2 Astra Law",
+                    "fr": "GPT 6.2 Astra Law"
+                },
+                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/openai-svgrepo-com.svg?_wwcv=1778299695154",
+                "llm_config": "default",
+                "description": null,
+                "context_window": {
+                    "input": 922000,
+                    "output": 128000
+                },
+                "capabilities": [
+                    "vision",
+                    "function_calling",
+                    "pdf_input",
+                    "reasoning",
+                    "prompt_caching"
+                ],
+                "categories": [
+                    "chat",
+                    "reasoning"
+                ],
+                "input_formats": [
+                    "text",
+                    "image",
+                    "pdf"
+                ],
+                "output_formats": [
+                    "text"
+                ],
+                "pricing": {
+                    "1m_tokens": {
+                        "input": 8,
+                        "output": 40,
+                        "cache_write": 10,
+                        "cache_read": 0.4
+                    }
+                },
+                "deprecation_date": null
+            },
+            {
+                "label": "gpt-6.2-sol",
+                "name": {
+                    "en": "GPT 6.2 Sol",
+                    "fr": "GPT 6.2 Sol"
+                },
+                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/openai-svgrepo-com.svg?_wwcv=1778299695154",
+                "llm_config": "default",
+                "description": null,
+                "context_window": {
+                    "input": 922000,
+                    "output": 128000
+                },
+                "capabilities": [
+                    "vision",
+                    "function_calling",
+                    "pdf_input",
+                    "reasoning",
+                    "prompt_caching"
+                ],
+                "categories": [
+                    "chat",
+                    "reasoning"
+                ],
+                "input_formats": [
+                    "text",
+                    "image",
+                    "pdf"
+                ],
+                "output_formats": [
+                    "text"
+                ],
+                "pricing": {
+                    "1m_tokens": {
+                        "input": 2,
+                        "output": 10,
+                        "cache_write": 2.5,
+                        "cache_read": 0.1
+                    }
+                },
+                "deprecation_date": null
+            },
+            {
                 "label": "gpt-6.1-sol",
                 "name": {
                     "en": "GPT 6.1 Sol",
@@ -137,48 +263,6 @@
                 "deprecation_date": null
             },
             {
-                "label": "gpt-6-rosalind",
-                "name": {
-                    "en": "GPT 6 Rosalind",
-                    "fr": "GPT 6 Rosalind"
-                },
-                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/openai-svgrepo-com.svg?_wwcv=1778299695154",
-                "llm_config": "default",
-                "description": null,
-                "context_window": {
-                    "input": 922000,
-                    "output": 128000
-                },
-                "capabilities": [
-                    "vision",
-                    "function_calling",
-                    "pdf_input",
-                    "reasoning",
-                    "prompt_caching"
-                ],
-                "categories": [
-                    "chat",
-                    "reasoning"
-                ],
-                "input_formats": [
-                    "text",
-                    "image",
-                    "pdf"
-                ],
-                "output_formats": [
-                    "text"
-                ],
-                "pricing": {
-                    "1m_tokens": {
-                        "input": 15,
-                        "output": 75,
-                        "cache_write": 18.75,
-                        "cache_read": 1.5
-                    }
-                },
-                "deprecation_date": null
-            },
-            {
                 "label": "gpt-6-astra",
                 "name": {
                     "en": "GPT 6 Astra",
@@ -256,6 +340,48 @@
                     "1m_tokens": {
                         "input": 10,
                         "output": 50,
+                        "cache_read": 1
+                    }
+                },
+                "deprecation_date": null
+            },
+            {
+                "label": "gpt-6-rosalind",
+                "name": {
+                    "en": "GPT 6 Rosalind",
+                    "fr": "GPT 6 Rosalind"
+                },
+                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/openai-svgrepo-com.svg?_wwcv=1778299695154",
+                "llm_config": "default",
+                "description": null,
+                "context_window": {
+                    "input": 922000,
+                    "output": 128000
+                },
+                "capabilities": [
+                    "vision",
+                    "function_calling",
+                    "pdf_input",
+                    "reasoning",
+                    "prompt_caching"
+                ],
+                "categories": [
+                    "chat",
+                    "reasoning"
+                ],
+                "input_formats": [
+                    "text",
+                    "image",
+                    "pdf"
+                ],
+                "output_formats": [
+                    "text"
+                ],
+                "pricing": {
+                    "1m_tokens": {
+                        "input": 10,
+                        "output": 50,
+                        "cache_write": 12.5,
                         "cache_read": 1
                     }
                 },
@@ -1120,6 +1246,42 @@
                 "deprecation_date": null
             },
             {
+                "label": "gpt-live-1.1",
+                "name": {
+                    "en": "GPT Live 1.1",
+                    "fr": "GPT Live 1.1"
+                },
+                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/openai-svgrepo-com.svg?_wwcv=1778299695154",
+                "llm_config": "default",
+                "description": null,
+                "context_window": {
+                    "input": null,
+                    "output": null
+                },
+                "capabilities": [
+                    "function_calling",
+                    "audio_input",
+                    "audio_output"
+                ],
+                "categories": [
+                    "realtime"
+                ],
+                "input_formats": [
+                    "text",
+                    "audio"
+                ],
+                "output_formats": [
+                    "text",
+                    "audio"
+                ],
+                "pricing": {
+                    "per_minute": {
+                        "input": 0.05
+                    }
+                },
+                "deprecation_date": null
+            },
+            {
                 "label": "gpt-live-1",
                 "name": {
                     "en": "GPT Live 1",
@@ -1701,6 +1863,49 @@
         },
         "models": [
             {
+                "label": "gemini-4-neon",
+                "name": {
+                    "en": "Gemini 4 Neon",
+                    "fr": "Gemini 4 Neon"
+                },
+                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Google_Gemini_icon_2025.svg?_wwcv=1778299695150",
+                "llm_config": "default",
+                "description": null,
+                "context_window": {
+                    "input": 1048576,
+                    "output": 1048576
+                },
+                "capabilities": [
+                    "vision",
+                    "function_calling",
+                    "audio_input",
+                    "pdf_input",
+                    "reasoning",
+                    "prompt_caching"
+                ],
+                "categories": [
+                    "chat",
+                    "reasoning"
+                ],
+                "input_formats": [
+                    "text",
+                    "image",
+                    "audio",
+                    "pdf"
+                ],
+                "output_formats": [
+                    "text"
+                ],
+                "pricing": {
+                    "1m_tokens": {
+                        "input": 3,
+                        "output": 15,
+                        "cache_read": 0.15
+                    }
+                },
+                "deprecation_date": null
+            },
+            {
                 "label": "gemini-4-argon",
                 "name": {
                     "en": "Gemini 4 Argon",
@@ -1782,6 +1987,42 @@
                         "input": 2,
                         "output": 10,
                         "cache_read": 0.1
+                    }
+                },
+                "deprecation_date": null
+            },
+            {
+                "label": "genie-4",
+                "name": {
+                    "en": "Genie 4",
+                    "fr": "Genie 4"
+                },
+                "logo": "https://cdn.weweb.io/designs/4c5017e4-0989-4b03-a0f8-dc7e566a1944/sections/Google_Gemini_icon_2025.svg?_wwcv=1778299695150",
+                "llm_config": "default",
+                "description": null,
+                "context_window": {
+                    "input": 1048576,
+                    "output": 65536
+                },
+                "capabilities": [
+                    "vision",
+                    "audio_output"
+                ],
+                "categories": [
+                    "chat"
+                ],
+                "input_formats": [
+                    "text",
+                    "image"
+                ],
+                "output_formats": [
+                    "text",
+                    "audio"
+                ],
+                "pricing": {
+                    "1m_tokens": {
+                        "input": 1.5,
+                        "output": 9
                     }
                 },
                 "deprecation_date": null
@@ -2903,9 +3144,11 @@
                 },
                 "capabilities": [
                     "vision",
+                    "reasoning",
                     "prompt_caching"
                 ],
                 "categories": [
+                    "reasoning",
                     "image"
                 ],
                 "input_formats": [
@@ -3576,7 +3819,7 @@
                 "llm_config": "default",
                 "description": null,
                 "context_window": {
-                    "input": 131072,
+                    "input": 262144,
                     "output": 131072
                 },
                 "capabilities": [
